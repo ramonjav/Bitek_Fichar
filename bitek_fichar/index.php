@@ -18,6 +18,7 @@
 
 </form>
 <!-- Prueba @ramonjav-->
+<!-- Prueba @YoelYoestar-->
 <?php
 if(isset($_GET['err'])){
     echo "<span style='background-color:#ffffff; padding:10px; margin-top:30px; border-radius:10px; color:black; border:solid 3px #960a0a;'><strong> Datos incorrectos</strong></span>";
