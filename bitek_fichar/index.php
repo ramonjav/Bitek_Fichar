@@ -10,7 +10,7 @@
     
     <body>
         <div class="inicio-caja">
-            <img src="img/logo1.png">
+            <img id="avatar" src="img/logo1.png">
             <h1>INICIO DE SESIÓN</h1>
             <form action="php/login.php" method="post">
                 <input type="text" name="correo" placeholder="Correo electronico"/>
