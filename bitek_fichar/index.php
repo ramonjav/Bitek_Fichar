@@ -9,21 +9,19 @@
     </head>
     
     <body>
-
-    <div class="login-box">
-        <img src="/img/logo1.png" width="300px" height="100px" id="logo">
-        <form action="php/login.php" method="post">
-            <p>Correo: <input type="text" name="correo" /></p>
-            <p>Contraseña: <input type="password" name="contrasena" /></p>
-            <p><input type="submit" value="Acceder"/></p>
-        </form>
-    </div>
-
-    <?php
-    if(isset($_GET['err'])){
-        echo "<span style='background-color:#ffffff; padding:10px; margin-top:30px; border-radius:10px; color:black; border:solid 3px #960a0a;'><strong> Datos incorrectos</strong></span>";
-    }
-    ?>
+        <div class="login-box">
+            <img src="/img/logo1.png" width="300px" height="100px" id="logo">
+            <form action="php/login.php" method="post">
+                <p>Correo: <input type="text" name="correo" /></p>
+                <p>Contraseña: <input type="password" name="contrasena" /></p>
+                <p><input type="submit" value="Acceder"/></p>
+            </form>
+        </div>
+        <?php
+            if(isset($_GET['err'])){
+                echo "<span style='background-color:#ffffff; padding:10px; margin-top:30px; border-radius:10px; color:black; border:solid 3px #960a0a;'><strong> Datos incorrectos</strong></span>";
+            }
+        ?>
         <script src="js/jquery-3.6.0.slim.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </body>
