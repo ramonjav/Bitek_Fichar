@@ -1,14 +1,18 @@
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: sans-serif;
     height: 100vh;
+    clear: none;
 }
 
 #nav {
     list-style-type: none;
     text-align: center;
     background: #666;
+    width: 80%;
+    float: right;
+    bottom: 50px;
 }
 
 #nav li {
@@ -34,7 +38,12 @@ body {
 #nav li img {
     margin: 0px;
     padding: 0px;
-    top: 50px;
-    left: 50px;
-    display: inline-block;
+}
+
+#logo {
+    width: 20%;
+}
+
+#cuerpo {
+    clear: right;
 }
