@@ -9,19 +9,21 @@
         <title>Bitek</title>
     </head>
     <body>
-        <div id="logo">
-            <ul id="nav">
-                <li><img src="../img/logo1.png"></li>
-            </ul>
-        </div>
-        <div id="nav">
-            <ul>
-                <li><a href="admin_pages/gesusr.php">Gestión Usuarios</a></li>
-                <li><a href="notificaciones.php">Gestión de Notificaciones</a></li>
-                <li><a href="admin_pages/consultas.php">Consultas</a></li>
-                <li><a href="admin_pages/gesreg.php">Gestión de Registros</a></li>
-                <li><a href="../php/session_destroy.php">Cerrar Sesión</a></li>
-            </ul>
+        <div id="nav-prin">
+            <div id="logo">
+                <ul id="nav">
+                    <li><img src="../img/logo1.png"></li>
+                </ul>
+            </div>
+            <div id="nav">
+                <ul>
+                    <li><a href="admin_pages/gesusr.php">Gestión Usuarios</a></li>
+                    <li><a href="notificaciones.php">Gestión de Notificaciones</a></li>
+                    <li><a href="admin_pages/consultas.php">Consultas</a></li>
+                    <li><a href="admin_pages/gesreg.php">Gestión de Registros</a></li>
+                    <li><a href="../php/session_destroy.php">Cerrar Sesión</a></li>
+                </ul>
+            </div>
         </div>
         <div id="cuerpo">
             <?php 

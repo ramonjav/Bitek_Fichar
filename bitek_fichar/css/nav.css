@@ -35,15 +35,14 @@ body {
     color: #ffffff;
 }
 
-#nav li img {
-    margin: 0px;
-    padding: 0px;
-}
-
 #logo {
     width: 20%;
+    float: left;
+    bottom: 50px;
 }
 
 #cuerpo {
-    clear: right;
+    width: 100%;
+    top: 50%;
+    clear: none;
 }
