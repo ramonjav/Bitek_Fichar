@@ -50,24 +50,15 @@
         <form action='crea-mod_reg.php' method='post'>
             <!--FECHA -->
             <p><label for='name'>Fecha: </label>
-            <input type='name' name='fecha' value=<?php echo $FECHA; ?> ></p>
+            <input type='date' name='fecha' value=<?php echo $FECHA; ?> ></p>
 
             <!-- HORA -->
             <p><label for='name'>Hora: </label>
-            <input type='name' name='hora' value='<?php echo $HORA; ?>'></p>
+            <input type='time' name='hora' value='<?php echo $HORA; ?>'></p>
 
             <!-- ACCION -->
             <p><label for='name'>Acción: </label>
             <input type='name' name='accion' value='<?php echo $ACCION; ?>'></p>
-
-            <!-- ACEP_EMPLEADO -->
-            <p><label for='name'>Aceptado empleado: </label>
-            <select name='acep_emp'>
-            <option value='0' selected>
-                <option value='0' <?php if($ACEMP == 0){ echo "selected"; } ?>>Pendiente</option> 
-                <option value='1' <?php if($ACEMP == 1){ echo "selected"; } ?>>Aceptado</option>
-                <option value='2' <?php if($ACEMP == 2){ echo "selected"; } ?>>Rechazado</option>
-            </select></P>
 
             <!-- ACEP_EMPRESA -->
             <p><label for='name'>Aceptado Empresa: </label>
@@ -79,22 +70,19 @@
 
             <!-- Estado -->
             <p><label for='name'>Estado:</label>
-            <input type='name' name='estado' value='<?php echo $ESTADO; ?>'></p>
+            <select>
+            <option value='0' selected>
+                <option value='0' <?php if($ESTADO == "trabajando"){ echo "selected"; } ?>>Trabajando</option> 
+                <option value='1' <?php if($ESTADO == "baja"){ echo "selected"; } ?>>De Baja</option>
+                <option value='2' <?php if($ESTADO == "vacaciones"){ echo "selected"; } ?>>En Vacaciones</option>
+            </select></P></p>
 
-            <!-- Empleado -->
+            <!-- Empleado 
             <p><label for='name'>Empleado:</label>
             <select name="empleados" id="">
             <option value='0' disabled hidden>Seleccione:</option>
-                <?php
-                    $table = getTable("usuarios");
-                    while ($valores = mysqli_fetch_array($table)) {
-                        $id = $valores['id_user'];
-                        $nombre = $valores['nombre']; 
-                        $apellidos = $valores['apellidos']; 
-                        echo "<option value=' $id'"; if($id == $IDUSER){echo"selected";} echo">$nombre $apellidos</option>";
-                    }
-                ?>
-            </select></p>
+              
+            </select></p>-->
 
             <input type='submit' name= 'guardar' value='Guardar'>
             <input type='submit' name= 'eliminar' value='Eliminar'>
