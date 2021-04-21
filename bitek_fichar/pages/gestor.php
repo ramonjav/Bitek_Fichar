@@ -9,10 +9,10 @@
         <title>Bitek</title>
     </head>
     <body>
-        <div id="nav-prin">
+        <div>
             <div id="nav">
                 <ul>
-                    <li id="logo"><img src="../img/logo1.png"></li>
+                    <li><img src="../img/logo1.png"></li>
                     <li><a href="admin_pages/gesusr.php">Gestión Usuarios</a></li>
                     <li><a href="notificaciones.php">Gestión de Notificaciones</a></li>
                     <li><a href="admin_pages/consultas.php">Consultas</a></li>

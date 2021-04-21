@@ -19,7 +19,6 @@ body {
     display: inline-block;
     text-align: center;
     margin: 0 52px 0 0;
-    top: 50px;
 }
 
 #nav li a {
@@ -28,6 +27,7 @@ body {
     background-color: #eeeeee;
     border: 1px solid #ccc;
     text-decoration: none;
+    align-content: center;
 }
 
 #nav li a:hover {
@@ -35,14 +35,12 @@ body {
     color: #ffffff;
     border: none;
     outline: none;
+    display: inline;
+    text-align: center;
 }
 
 #cuerpo {
+    top: 50px;
     width: 100%;
     clear: none;
-}
-
-#nav-prin {
-    top: 30%;
-    bottom: 30px;
 }
