@@ -13,8 +13,10 @@
             <img id="avatar" src="img/logo1.png">
             <h1>INICIO DE SESIÓN</h1>
             <form action="php/login.php" method="post">
-                <input type="text" name="correo" placeholder="Correo electronico"/>
-                <input type="password" name="contrasena" placeholder="Contraseña"/>
+                <label for="correo">Correo electrónico</label>
+                <input type="text" name="correo" placeholder="Introduce tu correo electrónico"/>
+                <label for="contrasena">Contraseña</label>
+                <input type="password" name="contrasena" placeholder="Introduce tu contraseña"/>
                 <input type="submit" value="Acceder"/></p>
             </form>
         </div>
