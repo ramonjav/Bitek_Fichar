@@ -20,25 +20,27 @@
                     <li><a href="../php/session_destroy.php">Cerrar Sesión</a></li>
                 </ul>
             </div>
-            <div id="cuerpo">
-                <?php 
-                    include("../php/conexion.php");
-                    session_start();
-
-                    if(!isset($_SESSION['tipo'])){
-                        header("Location: ../index.php");
-                    }else{
-                        if($_SESSION['tipo'] == 2){
-                            $nombre = $_SESSION['nombre'];
-                            $apellidos = $_SESSION['apellidos'];
-                            echo "Bienvenido, ", $nombre, " ", $apellidos;
-                        }else{
-                            header("Location: inicio.php");
-                        }
-                    }
-                ?>
-            </div>
         </div>
+        <div id="cuerpo">
+        prueba
+            <?php 
+                include("../php/conexion.php");
+                session_start();
+
+                if(!isset($_SESSION['tipo'])){
+                    header("Location: ../index.php");
+                }else{
+                    if($_SESSION['tipo'] == 2){
+                        $nombre = $_SESSION['nombre'];
+                        $apellidos = $_SESSION['apellidos'];
+                        echo "Bienvenido, ", $nombre, " ", $apellidos;
+                    }else{
+                        header("Location: inicio.php");
+                    }
+                }
+            ?>
+            
+            </div>
         <!-- <iframe src="notificaciones.php" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> -->
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>

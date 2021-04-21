@@ -10,13 +10,13 @@ body {
     list-style-type: none;
     text-align: center;
     background: red;
-    width: 100%;
+    /* width: 100%; */
     float: right;
     bottom: 50px;
 }
 
 #nav li {
-    display: inline-block;
+    display: inline;
     text-align: center;
     margin: 0 52px 0 0;
 }
@@ -27,7 +27,7 @@ body {
     background-color: #eeeeee;
     border: 1px solid #ccc;
     text-decoration: none;
-    align-content: center;
+    
 }
 
 #nav li a:hover {
@@ -37,10 +37,10 @@ body {
     outline: none;
     display: inline;
     text-align: center;
+    
 }
 
 #cuerpo {
-    top: 50px;
     width: 100%;
     clear: none;
 }
