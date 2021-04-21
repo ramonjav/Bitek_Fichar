@@ -10,11 +10,12 @@
     
     <body>
         <div class="login-box">
-            <img src="/img/logo1.png" width="300px" height="100px" id="logo">
+            <img src="img/logo1.png" width="300px" height="100px" id="logo">
+            <h1>INICIO DE SESIÓN</h1>
             <form action="php/login.php" method="post">
-                <p>Correo: <input type="text" name="correo" /></p>
-                <p>Contraseña: <input type="password" name="contrasena" /></p>
-                <p><input type="submit" value="Acceder"/></p>
+                <input type="text" name="correo" placeholder="Correo electronico"/>
+                <input type="password" name="contrasena" placeholder="Contraseña"/>
+                <input type="submit" value="Acceder"/></p>
             </form>
         </div>
         <?php
