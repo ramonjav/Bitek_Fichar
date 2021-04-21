@@ -1,16 +1,16 @@
 body {
     margin: 0;
     padding: 0;
-    background: url("../img/cabecera_ingenieria1.png") no-repeat center top;
+    background: url("../img/oficina.jpg") no-repeat center top;
     background-size: cover;
     font-family: sans-serif;
     height: 100vh;
 }
 
-.login-box {
+.inicio-caja {
     width: 320px;
     height: 420px;
-    background: #000;
+    background: #FF8A0E;
     color: #fff;
     top: 50%;
     left: 50%;

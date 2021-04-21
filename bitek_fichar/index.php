@@ -9,8 +9,8 @@
     </head>
     
     <body>
-        <div class="login-box">
-            <img src="img/logo1.png" width="300px" height="100px" id="logo">
+        <div class="inicio-caja">
+            <img src="img/logo1.png">
             <h1>INICIO DE SESIÓN</h1>
             <form action="php/login.php" method="post">
                 <input type="text" name="correo" placeholder="Correo electronico"/>
