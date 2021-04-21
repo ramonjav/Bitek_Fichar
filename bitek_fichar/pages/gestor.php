@@ -9,7 +9,6 @@
         <title>Bitek</title>
     </head>
     <body>
-        <div>
             <div id="nav">
                 <ul>
                     <li><img src="../img/logo1.png"></li>
@@ -20,9 +19,7 @@
                     <li><a href="../php/session_destroy.php">Cerrar Sesión</a></li>
                 </ul>
             </div>
-        </div>
         <div id="cuerpo">
-        prueba
             <?php 
                 include("../php/conexion.php");
                 session_start();
@@ -39,8 +36,7 @@
                     }
                 }
             ?>
-            
-            </div>
+        </div>
         <!-- <iframe src="notificaciones.php" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> -->
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>

@@ -9,25 +9,25 @@ body {
 #nav {
     list-style-type: none;
     text-align: center;
-    background: red;
-    /* width: 100%; */
+    background:#FF8A0E;
+    width: 100%;
     float: right;
-    bottom: 50px;
+    line-height: 40px;
 }
 
 #nav li {
     display: inline;
     text-align: center;
     margin: 0 52px 0 0;
+    line-height: 5px;
 }
 
 #nav li a {
     padding: 2px 7px 2px 7px;
     color: #666;
-    background-color: #eeeeee;
-    border: 1px solid #ccc;
+    background-color: transparent;
+    border: transparent;
     text-decoration: none;
-    
 }
 
 #nav li a:hover {
