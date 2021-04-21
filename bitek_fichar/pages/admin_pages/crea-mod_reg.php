@@ -23,7 +23,7 @@
 
         if(isset($_GET['mod'])){
             $reg_id = $_GET['mod'];
-            $sql=mysqli_query($conexion,"SELECT * FROM usuarios WHERE id_user = $JID");
+            $sql=mysqli_query($conexion,"SELECT * FROM usuarios WHERE id_user = $reg_id");
 
 	        if($row=mysqli_fetch_array($sql)){
                 
@@ -47,42 +47,4 @@
 
 <?php
 
-if(isset($_POST['guardar'])){
-    if(!empty($_POST['dni'])){
-        if(!empty($_POST['nombre'])){
-            if(!empty($_POST['apellidos'])){
-                if(!empty($_POST['correo'])){
-                    if(!empty($_POST['contrasena'])){
-                        if(!empty($_POST['tipo'])){
-
-                            $dni = $_POST['dni'];
-                            $nombre = $_POST['nombre'];
-                            $apellidos = $_POST['apellidos'];
-                            $correo = $_POST['correo'];
-                            $contrasena = $_POST['contrasena'];
-                            $tipo = $_POST['tipo'];
-
-                            if(comprobarUsuario($dni)){
-                                UpdateUsuario($dni, $nombre, $apellidos, $correo, $contrasena, $tipo);
-                            }else{
-                                InsertUsuario($dni, $nombre, $apellidos, $correo, $contrasena, $tipo);
-                            }
-                            
-                        }else{ echo "No puedes dejar el tipo en blanco";}
-                    }else{echo "No puedes dejar la contraseña en blanco";}
-                }else{echo "No puedes dejar el correo en blanco";}
-            }else{echo "No puedes dejar los apellidos en blanco";}
-        }else{echo "No puedes dejar el nombre en blanco";} 
-    }else{echo "No puedes dejar el DNI/NIE en blanco";}
-}
-
-
-if(isset($_POST['eliminar'])){
-    if(!empty($_POST['dni'])){
-        $dni = $_POST['dni'];
-        if(comprobarUsuario($dni)){
-            DeleteUsuario($dni);
-        }else{echo "Este usuario no existe";}
-    }else{echo "No puedes dejar el DNI/NIE en blanco";}
-}
 ?>
