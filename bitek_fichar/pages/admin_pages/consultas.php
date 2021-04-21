@@ -1,1 +1,1 @@
-<a href='inicio.php'>Volver</a>
+<a href='../gestor.php'>Volver</a>
