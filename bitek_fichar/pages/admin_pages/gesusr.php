@@ -136,6 +136,7 @@ if(isset($_POST['guardar'])){
                             }else{
                                 InsertUsuario($dni, $nombre, $apellidos, $correo, $contrasena, $tipo);
                             }
+                            header("Location: gesusr.php");
                             
                         }else{ echo "No puedes dejar el tipo en blanco";}
                     }else{echo "No puedes dejar la contraseña en blanco";}
@@ -151,6 +152,7 @@ if(isset($_POST['eliminar'])){
         $dni = $_POST['dni'];
         if(comprobarUsuario($dni)){
             DeleteUsuario($dni);
+            header("Location: gesusr.php");
         }else{echo "Este usuario no existe";}
     }else{echo "No puedes dejar el DNI/NIE en blanco";}
 }
