@@ -9,8 +9,8 @@ body {
 #nav {
     list-style-type: none;
     text-align: center;
-    background: #666;
-    width: 80%;
+    background: red;
+    width: 100%;
     float: right;
     bottom: 50px;
 }
@@ -18,7 +18,7 @@ body {
 #nav li {
     display: inline-block;
     text-align: center;
-    margin: 0 10px 0 0;
+    margin: 0 52px 0 0;
     top: 50px;
 }
 
@@ -33,16 +33,16 @@ body {
 #nav li a:hover {
     background-color: #333333;
     color: #ffffff;
-}
-
-#logo {
-    width: 20%;
-    float: left;
-    bottom: 50px;
+    border: none;
+    outline: none;
 }
 
 #cuerpo {
     width: 100%;
-    top: 50%;
     clear: none;
+}
+
+#nav-prin {
+    top: 30%;
+    bottom: 30px;
 }
