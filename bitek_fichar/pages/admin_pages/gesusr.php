@@ -47,9 +47,10 @@
         echo "<select id='opciones' name='opciones'>
         <option value='0' selected disabled hidden>Seleccione:</option>";
           while ($valores = mysqli_fetch_array($table)) {
+                $id = $valores['id_user'];
                 $nombre = $valores['nombre']; 
                 $apellidos = $valores['apellidos']; 
-                echo "<option value=>$nombre $apellidos</option>";
+                echo "<option value='$id'>$nombre $apellidos</option>";
             }
         echo  "</select>";
         
@@ -99,7 +100,7 @@
         const URL = window.location.pathname;
 
         const opcionCambiada = () => {
-            const indice = select.selectedIndex;
+            const indice = select.value;
             const opcionSeleccionada = select.options[indice];
             window.location.href = URL + '?jid=' + indice;
         };

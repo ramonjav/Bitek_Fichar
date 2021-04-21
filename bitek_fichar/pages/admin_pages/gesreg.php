@@ -64,7 +64,7 @@
         }
     ?> 
     <p><a href="crea-mod_reg.php">Crear registro nuevo</a></p>
-    <p><a href="gesusr.php">Volver</a></p>
+    <p><a href="../gestor.php">Volver</a></p>
 
     <script src="../../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
