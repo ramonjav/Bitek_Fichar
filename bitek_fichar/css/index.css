@@ -70,6 +70,6 @@ body {
 
 .inicio-caja input[type="submit"]:hover {
     cursor: pointer;
-    background: #fff;
+    background: #ff9f0e;
     color: #000;
 }
