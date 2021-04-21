@@ -8,12 +8,14 @@ body {
 #nav {
     list-style-type: none;
     text-align: center;
+    background: #666;
 }
 
 #nav li {
-    display: inline;
+    display: inline-block;
     text-align: center;
     margin: 0 10px 0 0;
+    top: 50px;
 }
 
 #nav li a {
@@ -27,4 +29,12 @@ body {
 #nav li a:hover {
     background-color: #333333;
     color: #ffffff;
+}
+
+#nav li img {
+    margin: 0px;
+    padding: 0px;
+    top: 50px;
+    left: 50px;
+    display: inline-block;
 }

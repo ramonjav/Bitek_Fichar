@@ -10,7 +10,6 @@
     </head>
     <body>
         <div>
-            <!-- <img src="../img/logo1.png"> -->
             <ul id="nav">
                 <li><img src="../img/logo1.png"></li>
                 <li><a href="admin_pages/gesusr.php">Gestión Usuarios</a></li>
