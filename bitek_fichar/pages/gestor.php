@@ -35,7 +35,7 @@
                 </ul>
             </div>
 
-        <div id="cuerpo">
+        <div id="cuerpo" class="container-fluid">
             <?php 
                 include("../php/conexion.php");
                 session_start();

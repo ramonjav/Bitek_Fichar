@@ -1,5 +1,9 @@
 /* Created with Easy CSS Menu */
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
 #mbmcpebul_wrapper {
   padding: 5px;
   border-style: solid;
