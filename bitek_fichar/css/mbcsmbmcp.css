@@ -599,7 +599,7 @@ body {
 } 
 #mbmcpebul_table ul a img, #mbmcpebul_table ul a span, 
 #mbmcpebul_table_burger ul a img, #mbmcpebul_table_burger ul a span { 
-  margin-right: 6px; 
+  margin-left: 6px; 
   vertical-align: middle; 
 } 
 
@@ -612,7 +612,7 @@ body {
 } 
 
 #mbmcpebul_table_burger ul.img_200 > li > a { 
-  padding-left: 220px; 
+  padding-right: 0px; 
 } 
 
 #mbmcpebul_table ul.img_200 > li > a.with_img_200 { 
