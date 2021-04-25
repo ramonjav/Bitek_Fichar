@@ -560,7 +560,7 @@
 } 
 
 #mbmcpebul_table ul li a.with_arrow, #mbmcpebul_table_burger ul li a div.with_arrow { 
-  background-image: url(ebab_mbmcp_c.png); 
+  background-image: url(../img/ebab_mbmcp_c.png); 
   background-repeat: no-repeat; 
   background-position: right center; 
   padding-right: 20px; 
@@ -568,7 +568,7 @@
 
 #mbmcpebul_table ul li a.with_arrow:hover, #mbmcpebul_table ul li:hover > a.with_arrow, #mbmcpebul_table ul li.subexpanded > a.with_arrow, 
 #mbmcpebul_table_burger ul li a:hover div.with_arrow, #mbmcpebul_table_burger ul li:hover > a div.with_arrow, #mbmcpebul_table_burger ul li.subexpanded > a div.with_arrow { 
-  background-image: url(ebab_mbmcp_c2.png); 
+  background-image: url(../img/ebab_mbmcp_c2.png); 
 } 
 
 #mbmcpebul_table_burger li.hamburger_button a div.hamburger_icon { 
@@ -640,7 +640,7 @@
 } 
 
 #mbmcpebul_table div.icon_1 { 
-  background-image: url(ebab_mbmcp_ico_0.png); 
+  background-image: url(../img/ebab_mbmcp_ico_0.png); 
   background-repeat: no-repeat; 
   background-position: 15px center; 
   height: 100%; 
@@ -650,7 +650,7 @@
   position: relative; 
   width: 200px; 
   height: 61px; 
-  background-image: url(ebab_mbmcp_ico_0.png); 
+  background-image: url(../img/ebab_mbmcp_ico_0.png); 
   background-repeat: no-repeat; 
   margin-right: 6px; 
   border: 0; 
