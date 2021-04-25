@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="../css/nav.css"/> -->
+        <link rel="stylesheet" href="../css/nav.css"/>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -24,7 +24,7 @@
                 </ul>
             </div> -->
 
-            <div id="mbmcpebul_wrapper" style="max-width: 913px;">
+           <div id="mbmcpebul_wrapper" style="max-width: 913px;" class="container">
                 <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
                     <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1"></a></div></li>
                     <li><div class="buttonbg" style="width: 120px;"><a>Gestión Usuario</a></div></li>
@@ -34,6 +34,7 @@
                     <li><div class="buttonbg"><a>Cerrar Sesión</a></div></li>
                 </ul>
             </div>
+
         <div id="cuerpo">
             <?php 
                 include("../php/conexion.php");
