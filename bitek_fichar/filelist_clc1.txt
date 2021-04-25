@@ -1,0 +1,7 @@
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\img\ebab_mbmcp.png
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\img\ebab_mbmcp_c.png
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\img\ebab_mbmcp_c2.png
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\js\mbjsmbmcp.js
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\css\mbcsmbmcp.css
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\pages\gestor.php
+C:\xampp\htdocs\Bitek_Fichar\bitek_fichar\filelist_clc1.txt
