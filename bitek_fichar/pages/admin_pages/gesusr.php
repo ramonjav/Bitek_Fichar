@@ -67,40 +67,35 @@
                 echo "<option value='$id'>$nombre $apellidos</option>";
             }
         echo  "</select>";
-        
+    ?>
     
-    echo "<form action='gesusr.php' method='post'>
+    <form action='gesusr.php' method='post'>
         <!-- DNI/NIE-->
         <p><label for='name'>DNI/NIE: </label>
-        <input type='name' name='dni' id='dni' value='$JDNI'></p>
+        <input type='name' name='dni' id='dni' value='<?php echo $JDNI; ?>'></p>
 
         <!-- Nombre -->
         <p><label for='name'>Nombre: </label>
-        <input type='name' name='nombre' value='$JNOMBRE'></p>
+        <input type='name' name='nombre' value='<?php echo $JNOMBRE; ?>'></p>
 
         <!-- Apellidos -->
         <p><label for='name'>Apellidos: </label>
-        <input type='name' name='apellidos' value='$JAPELLIDOS'></p>
+        <input type='name' name='apellidos' value='<?php echo $JAPELLIDOS; ?>'></p>
 
         <!-- Correo -->
         <p><label for='name'>Correo: </label>
-        <input type='name' name='correo' value='$JMAIL'></P>
+        <input type='name' name='correo' value='<?php echo $JMAIL; ?>'></P>
 
         <!-- Contraseña -->
         <p><label for='name'>Contraseña: </label>
-        <input type='name' name='contrasena' value='$JPASS'></p>
+        <input type='name' name='contrasena' value='<?php echo $JPASS; ?>'></p>
 
         <!-- Tipo -->
         <p><label for='name'>Tipo:</label>
-        <select id='tipo' name='tipo'>";
-            if($JTIPO == 2){
-                echo "<option value='1'>Empleado</option> 
-                <option value='2' selected >Administrador</option>";
-            }else{
-                echo "<option value='1' selected>Empleado</option> 
-                <option value='2' >Administrador</option>";
-            }
-        echo"</select></p>
+        <select id='tipo' name='tipo'>
+            <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
+            <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
+        </select></p>
     
         <input type='submit' name= 'guardar' value='Guardar'>
         <input type='submit' name= 'eliminar' value='Eliminar'>
@@ -119,9 +114,9 @@
         };
 
         select.addEventListener('change', opcionCambiada);
-    </script>";
+    </script>
 
-    ?>
+    
 
     <script src="../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>

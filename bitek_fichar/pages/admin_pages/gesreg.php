@@ -34,7 +34,40 @@
             }
         }
 
-        $sql = "SELECT * FROM `registro` ORDER BY `id_reg` DESC";
+        if(isset($_GET['date']) && isset($_GET['opciones'])){
+            $date = $_GET['date'];
+            $JID = $_GET['opciones'];
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$date' AND id_usuario = $JID ORDER BY `id_reg` DESC";
+
+        }elseif(isset($_GET['date'])){
+            $date = $_GET['date'];
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$date' ORDER BY `id_reg` DESC";
+
+        }elseif(isset($_GET['opciones'])){
+            $JID = $_GET['opciones'];
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $JID ORDER BY `id_reg` DESC";
+
+        }else{
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario ORDER BY `id_reg` DESC";
+        }
+
+        $sql_emp = "SELECT * FROM `usuarios`";
+        $table_emp = mysqli_query($conexion, $sql_emp);
+
+        echo "<form accion='POST'>
+        <select id='opciones' name='opciones'>
+        <option value='0' selected disabled hidden>Seleccione:</option>";
+          while ($valores = mysqli_fetch_array($table_emp)) {
+                $id = $valores['id_user'];
+                $nombre = $valores['nombre']; 
+                $apellidos = $valores['apellidos']; 
+                echo "<option value='$id'>$nombre $apellidos</option>";
+            }
+        echo  "</select>
+        <input type='date' name='date'>
+        <input type='submit' name='buscar' value='Buscar'>
+        </form>";
+
         
         $table = mysqli_query($conexion, $sql);
         $rows = mysqli_num_rows($table);
@@ -49,6 +82,7 @@
                 <th>Acción</th>
                 <th>Aceptado Empleado</th>
                 <th>Aceptado Empresa</th>
+                <th>Empleado</th>
                 <th>Estado</th>
                 <th>Modificar</th>
                 <th>Eliminar</th>
@@ -63,6 +97,7 @@
                 $aceptado_trabajador = $row['aceptado_trabajador'];
                 $aceptado_empresa = $row['aceptado_empresa'];
                 $estado = $row['estado'];
+                $nombre_emp =$row["nombre"]." ".$row["apellidos"];;
 
                 echo "<tr><td>$id_reg</td>
                 <td>$fecha</td>
@@ -70,6 +105,7 @@
                 <td>$accion</td>
                 <td>$aceptado_trabajador</td>
                 <td>$aceptado_empresa</td>
+                <td>$nombre_emp</td>
                 <td>$estado</td>
                 <td><a href='crea-mod_reg.php?mod=$id_reg'>Modificiar</a></td>
                 <td><a href='eliminar_registro.php?del=$id_reg'>Eliminar</a></td></tr>";
@@ -79,8 +115,37 @@
     ?> 
     <p><a href="crea-mod_reg.php">Crear registro nuevo</a></p>
 
+
+    <!-- <script> 
+        const select = document.querySelector('#opciones');
+        const URL = window.location.pathname;
+
+        const opcionCambiada = () => {
+            const indice = select.value;
+            const opcionSeleccionada = select.options[indice];
+            window.location.href = URL + '?jid=' + indice;
+        };
+
+        select.addEventListener('change', opcionCambiada);
+    </script>-->
     <script src="../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/mbjsmbmcp.js"></script>
 </body>
 </html>
+
+<?php
+    if(isset($_POST['guardar'])){
+        if(isset($_GET['opciones'])){
+            $jid = $_GET['opciones'];
+            echo $jid;
+        }
+
+        if(isset($_GET['date'])){
+            $date = $_GET['date'];
+            echo $date;
+
+        }
+
+    }
+?>
