@@ -7,8 +7,8 @@
 }
 
 .formu label{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-weight: bold;
     display: block;
 }
@@ -30,10 +30,9 @@
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 30px;
     float: right;
     display: block;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: -70px;
 }
 
