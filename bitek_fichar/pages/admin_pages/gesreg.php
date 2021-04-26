@@ -113,21 +113,8 @@
             echo "</table>";
         }
     ?> 
-    <p><a href="crea-mod_reg.php">Crear registro nuevo</a></p>
+    <p><a href="crear_reg.php">Crear registro nuevo</a></p>
 
-
-    <!-- <script> 
-        const select = document.querySelector('#opciones');
-        const URL = window.location.pathname;
-
-        const opcionCambiada = () => {
-            const indice = select.value;
-            const opcionSeleccionada = select.options[indice];
-            window.location.href = URL + '?jid=' + indice;
-        };
-
-        select.addEventListener('change', opcionCambiada);
-    </script>-->
     <script src="../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../../js/mbjsmbmcp.js"></script>
