@@ -74,31 +74,31 @@
         <div class="formu">
             <form action='gesusr.php' method='post'>
                 <!-- DNI/NIE-->
-                <p><label for='name'>DNI/NIE: </label>
-                <input type='name' name='dni' id='dni' value='<?php echo $JDNI; ?>'></p>
+                <label for='name'>DNI/NIE</label>
+                <input type='name' name='dni' id='dni' value='<?php echo $JDNI; ?>'>
 
                 <!-- Nombre -->
-                <p><label for='name'>Nombre: </label>
-                <input type='name' name='nombre' value='<?php echo $JNOMBRE; ?>'></p>
+                <label for='name'>Nombre</label>
+                <input type='name' name='nombre' value='<?php echo $JNOMBRE; ?>'>
 
                 <!-- Apellidos -->
-                <p><label for='name'>Apellidos: </label>
-                <input type='name' name='apellidos' value='<?php echo $JAPELLIDOS; ?>'></p>
+                <label for='name'>Apellidos</label>
+                <input type='name' name='apellidos' value='<?php echo $JAPELLIDOS; ?>'>
 
                 <!-- Correo -->
-                <p><label for='name'>Correo: </label>
-                <input type='name' name='correo' value='<?php echo $JMAIL; ?>'></P>
+                <label for='name'>Correo</label>
+                <input type='name' name='correo' value='<?php echo $JMAIL; ?>'>
 
                 <!-- Contraseña -->
-                <p><label for='name'>Contraseña: </label>
-                <input type='name' name='contrasena' value='<?php echo $JPASS; ?>'></p>
+                <label for='name'>Contraseña</label>
+                <input type='name' name='contrasena' value='<?php echo $JPASS; ?>'>
 
                 <!-- Tipo -->
-                <p><label for='name'>Tipo:</label>
+                <label for='name'>Tipo</label>
                 <select id='tipo' name='tipo'>
                     <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
                     <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
-                </select></p>               
+                </select>
             </form>
             <form action='gesusr.php' method='post'>
                 <div class="botones">
