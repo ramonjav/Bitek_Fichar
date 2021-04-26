@@ -6,38 +6,3 @@ body {
     clear: none;
 }
 
-#nav {
-    list-style-type: none;
-    text-align: center;
-    background:#FF8A0E;
-    width: 100%;
-    float: right;
-}
-
-#nav li {
-    display: inline-block;
-    align-items: center;
-    text-align: center;
-    margin: 0 0px 0 0;
-    vertical-align: middle;  
-}
-
-#nav li a {
-    padding: 24px 35px 20px 35px;
-    color: #fff;
-    background-color: transparent;
-    border: transparent;
-    text-decoration: none;
-}
-
-#nav li a:hover {
-    background-color: #333333;
-    color: #ffffff;
-    border: none;
-    outline: none;
-}
-
-#cuerpo {
-    width: 100%;
-    clear: none;
-}
