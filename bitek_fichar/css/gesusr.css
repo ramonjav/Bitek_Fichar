@@ -1,3 +1,4 @@
+/* FORMULARIO */
 .formu {
     margin: 0px;
     padding: 0px;
@@ -24,6 +25,8 @@
     margin-left: 10px;
 }
 
+
+/* Botones guardar, eliminar y nuevo usuario */
 .botones {
     top: 50%;
     left: 50%;
@@ -35,8 +38,6 @@
     margin-top: 25px;
     margin-left: -70px;
 }
-
-/* Botones guardar, eliminar y nuevo usuario */
 
 .elim{
     width: 33%;
@@ -95,3 +96,4 @@
     color: #fff;
     background: #1ac703;
 }
+
