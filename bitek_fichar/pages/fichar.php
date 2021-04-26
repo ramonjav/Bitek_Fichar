@@ -14,10 +14,10 @@
 <body>
     <div id="mbmcpebul_wrapper" style="max-width: 913px;" class="container">
         <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
-            <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="inicio.php"></a></div></li>
-            <li><div class="buttonbg" style="width: 120px;"><a href="admin_pages/gesusr.php"></a></div></li>
-            <li><div class="buttonbg" style="width: 175px;"><a href="notificaciones.php">Gestión de Notificaciones</a></div></li>
-            <li><div class="buttonbg" style="width: 175px;"><a href="admin_pages/consultas.php">Consultar calendario</a></div></li>
+            <a class="button_1" href="fichar.php"><li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"></div></li></a>
+            <li><div class="buttonbg" style="width: 120px;"><a href="fichar.php">Fichar</a></div></li>
+            <li><div class="buttonbg" style="width: 175px;"><a href="#">Gestión de Notificaciones</a></div></li>
+            <li><div class="buttonbg" style="width: 175px;"><a href="#">Consultar calendario</a></div></li>
             <li><div class="buttonbg"><a href="../php/session_destroy.php">Cerrar Sesión</a></div></li>
         </ul>
     </div>
@@ -39,7 +39,6 @@
             echo "Estas de ", $_GET['especial'];
         }
         echo "</form>";
-        echo "<a href='inicio.php'>Volver</a>";
 
         if(isset($_POST["volver"])){header("Location: inicio.php");}
 
