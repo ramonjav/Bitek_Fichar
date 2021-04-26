@@ -24,7 +24,6 @@
     margin-left: 10px;
 }
 
-/*  */
 .botones {
     top: 50%;
     left: 50%;
@@ -37,6 +36,8 @@
     margin-top: 20px;
     margin-left: -70px;
 }
+
+/* Botones guardar, eliminar y nuevo usuario */
 
 .elim{
     width: 33%;
