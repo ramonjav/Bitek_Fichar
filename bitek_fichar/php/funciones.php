@@ -1,16 +1,5 @@
 <?php 
 
-function InsertRegistro($fecha, $hora, $accion, $acept, $acepe, $estado, $user_id){
-    include("conexion.php");
-    $sql="INSERT INTO registro (fecha, hora, accion, aceptado_trabajador, aceptado_empresa, estado, id_usuario) VALUES ('$fecha', '$hora', '$accion', '$acept', '$acepe', '$estado', '$user_id')";
-
-    if (mysqli_query($conexion, $sql)) {
-        echo "New record created successfully";
-    }else{
-        echo "Error: " . $sql . "<br>" . $conexion->error;
-    }
-}
-
 function getLastReg($user_id){
     include("conexion.php");
     $sqlCom = "SELECT * FROM `registro` WHERE `id_usuario` = '$user_id' ORDER by `id_reg` DESC LIMIT 1";
@@ -82,5 +71,27 @@ function comprobarUsuario($dni){
     return $com;
 }
 
+function InsertRegistro($fecha, $hora, $accion, $acept, $acepe, $estado, $user_id){
+    include("conexion.php");
+    $sql="INSERT INTO registro (fecha, hora, accion, aceptado_trabajador, aceptado_empresa, estado, id_usuario) VALUES ('$fecha', '$hora', '$accion', '$acept', '$acepe', '$estado', '$user_id')";
+
+    if (mysqli_query($conexion, $sql)) {
+        echo "New record created successfully";
+    }else{
+        echo "Error: " . $sql . "<br>" . $conexion->error;
+    }
+}
+
+
+function UpdateRegistro($id_reg, $fecha, $hora, $accion, $acepe, $estado){
+    include("conexion.php");
+    $sql = "UPDATE `registro` SET `fecha`='$fecha',`hora`='$hora',`accion`='$accion',`aceptado_empresa`='$acepe',`estado`='$estado' WHERE `id_reg` = '$id_reg'";
+
+    if (mysqli_query($conexion, $sql)) {
+        echo "New record created successfully";
+    }else{
+        echo "Error: " . $sql . "<br>" . $conexion->error;
+    }
+}
 
 ?> 
