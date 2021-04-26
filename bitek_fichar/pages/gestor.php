@@ -36,7 +36,7 @@
                     if($_SESSION['tipo'] == 2){
                         $nombre = $_SESSION['nombre'];
                         $apellidos = $_SESSION['apellidos'];
-                        echo "<div class='titulo'><p> Bienvenido, <br>", $nombre, " ", $apellidos, "</p></div>";
+                        echo "<div class='titulo' class='container'><p> Bienvenido, <br>", $nombre, " ", $apellidos, "</p></div>";
                     }else{
                         header("Location: inicio.php");
                     }
