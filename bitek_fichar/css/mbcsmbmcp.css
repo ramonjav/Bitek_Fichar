@@ -93,7 +93,7 @@ body {
   font-weight: normal;
   text-decoration: none;
   display: block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   white-space: nowrap;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -189,10 +189,10 @@ body {
 
 #mbmcpebul_table li {
   list-style: none;
-  float: left;
+  /* float: left; */
   margin: 0px 7px 7px 0px;
   padding: 0;
-  float: left;
+  /* float: left; */
   display: inline-block;
 }
 
@@ -338,7 +338,7 @@ body {
   font-weight: normal;
   text-decoration: none;
   display: block;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   white-space: nowrap;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -420,8 +420,8 @@ body {
   border-radius: 4px 4px 0 0;
 }
 
-#mbmcpebul_table_burger ul li.last_item, #mbmcpebul_table_burger ul li.last_item > a {
-}
+/* #mbmcpebul_table_burger ul li.last_item, #mbmcpebul_table_burger ul li.last_item > a {
+} */
 
 #mbmcpebul_table_burger ul li.last_item.last_visible_item, #mbmcpebul_table_burger ul li.last_item.last_visible_item > a {
   border-radius: 0 0 4px 4px;
@@ -456,9 +456,9 @@ body {
   width: 100%;
 }
 
-#mbmcpebul_table_burger.css_menu li:hover > ul {
-  /*opacity: 1;*/
-}
+/* #mbmcpebul_table_burger.css_menu li:hover > ul {
+  opacity: 1;
+} */
 
 #mbmcpebul_table_burger.css_menu ul {
   transition-duration: 0;
