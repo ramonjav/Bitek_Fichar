@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../../css/mbcsmbmcp.css" type="text/css" />
+    <link rel="stylesheet" href="../../css/gesusr.css"/>
     <title>Bitek</title>
 </head>
 <body>
@@ -58,7 +59,7 @@
             $JAPELLIDOS='';
         }
 
-        echo "<select id='opciones' name='opciones'>
+        echo "<div class='selector'><p><select id='opciones' name='opciones'>
         <option value='0' selected disabled hidden>Seleccione:</option>";
           while ($valores = mysqli_fetch_array($table)) {
                 $id = $valores['id_user'];
@@ -66,43 +67,46 @@
                 $apellidos = $valores['apellidos']; 
                 echo "<option value='$id'>$nombre $apellidos</option>";
             }
-        echo  "</select>";
+        echo  "</select></p></div>";
     ?>
     
-    <form action='gesusr.php' method='post'>
-        <!-- DNI/NIE-->
-        <p><label for='name'>DNI/NIE: </label>
-        <input type='name' name='dni' id='dni' value='<?php echo $JDNI; ?>'></p>
+    <div class="container">
+        <div class="formu">
+            <form action='gesusr.php' method='post'>
+                <!-- DNI/NIE-->
+                <p><label for='name'>DNI/NIE: </label>
+                <input type='name' name='dni' id='dni' value='<?php echo $JDNI; ?>'></p>
 
-        <!-- Nombre -->
-        <p><label for='name'>Nombre: </label>
-        <input type='name' name='nombre' value='<?php echo $JNOMBRE; ?>'></p>
+                <!-- Nombre -->
+                <p><label for='name'>Nombre: </label>
+                <input type='name' name='nombre' value='<?php echo $JNOMBRE; ?>'></p>
 
-        <!-- Apellidos -->
-        <p><label for='name'>Apellidos: </label>
-        <input type='name' name='apellidos' value='<?php echo $JAPELLIDOS; ?>'></p>
+                <!-- Apellidos -->
+                <p><label for='name'>Apellidos: </label>
+                <input type='name' name='apellidos' value='<?php echo $JAPELLIDOS; ?>'></p>
 
-        <!-- Correo -->
-        <p><label for='name'>Correo: </label>
-        <input type='name' name='correo' value='<?php echo $JMAIL; ?>'></P>
+                <!-- Correo -->
+                <p><label for='name'>Correo: </label>
+                <input type='name' name='correo' value='<?php echo $JMAIL; ?>'></P>
 
-        <!-- Contraseña -->
-        <p><label for='name'>Contraseña: </label>
-        <input type='name' name='contrasena' value='<?php echo $JPASS; ?>'></p>
+                <!-- Contraseña -->
+                <p><label for='name'>Contraseña: </label>
+                <input type='name' name='contrasena' value='<?php echo $JPASS; ?>'></p>
 
-        <!-- Tipo -->
-        <p><label for='name'>Tipo:</label>
-        <select id='tipo' name='tipo'>
-            <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
-            <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
-        </select></p>
-    
-        <input type='submit' name= 'guardar' value='Guardar'>
-        <input type='submit' name= 'eliminar' value='Eliminar'>
-        <input type='submit' name= 'nuevo' value='Nuevo Usuario'>
-        
-    </form>
-
+                <!-- Tipo -->
+                <p><label for='name'>Tipo:</label>
+                <select id='tipo' name='tipo'>
+                    <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
+                    <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
+                </select></p>
+            
+                <input type='submit' name= 'guardar' value='Guardar'>
+                <input type='submit' name= 'eliminar' value='Eliminar'>
+                <input type='submit' name= 'nuevo' value='Nuevo Usuario'>
+                
+            </form>
+        </div>
+    </div>
     <script>
         const select = document.querySelector('#opciones');
         const URL = window.location.pathname;
