@@ -12,19 +12,24 @@
     text-align: center;
     vertical-align: middle;
     float: left;
+    margin-top:10px ;
     margin-bottom: 200px;
     margin-left: 10px;
 }
 
 .elim{
-    width: 30%;
+    width: 33%;
     float: left;
-    /* vertical-align: middle; */
+    vertical-align: middle; 
 }
 
 .elim input[type="submit"]{
     background: red;
     color: #fff;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 18px;
 }
 
 .elim input[type="submit"]:hover{
@@ -33,12 +38,16 @@
 }
 
 .nuev{
-    width: 30%;
+    width: 33%;
     float: right;
-    /* vertical-align: middle; */
+    vertical-align: middle; 
 }
 .nuev input[type="submit"]{
     background: #ff9e20;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 18px;
 }
 
 .nuev input[type="submit"]:hover{
@@ -47,12 +56,16 @@
 }
 
 .guar{
-    width: 30%;
+    width: 33%;
     float: left;
-    /* vertical-align: middle; */
+    vertical-align: middle;
 }
 
 .guar input[type="submit"]{
     background: #237a17;
     color: #fff;
-} 
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 18px;
+}

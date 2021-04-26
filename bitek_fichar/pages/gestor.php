@@ -10,10 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="../css/mbcsmbmcp.css" type="text/css" />
-<<<<<<< HEAD
-        <link rel="stylesheet" href="../css/gestor.css"/>
-=======
->>>>>>> parent of d36555b (colorcito)
         <title>Bitek</title>
     </head>
     <body>
