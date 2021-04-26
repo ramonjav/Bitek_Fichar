@@ -7,8 +7,8 @@
 }
 
 .formu label{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-weight: bold;
     display: block;
 }
@@ -24,19 +24,19 @@
     margin-left: 10px;
 }
 
-/*  */
 .botones {
     top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    padding: 70px 30px;
     float: right;
     display: block;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: -70px;
 }
+
+/* Botones guardar, eliminar y nuevo usuario */
 
 .elim{
     width: 33%;
