@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../../css/mbcsmbmcp.css" type="text/css" />
-    <link rel="stylesheet" href="../../css/gesusr.css"/>
+    <link rel="stylesheet" href="../../css/gesusr.css" type="text/css"/>
     <title>Bitek</title>
 </head>
 <body>
@@ -98,13 +98,14 @@
                 <select id='tipo' name='tipo'>
                     <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
                     <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
-                </select></p>
-
+                </select></p>               
+            </form>
+            <form action='gesusr.php' method='post'>
                 <div class="botones">
                     <div class="guar"><input type='submit' name= 'guardar' value='Guardar'></div>
                     <div class="elim"><input type='submit' name= 'eliminar' value='Eliminar'></div>
                     <div class="nuev"><input type='submit' name= 'nuevo' value='Nuevo Usuario'></div>
-                </div>                
+                </div> 
             </form>
         </div>
     </div>

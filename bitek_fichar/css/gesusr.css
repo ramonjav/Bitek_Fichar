@@ -1,14 +1,14 @@
 .formu {
     margin: 0px;
     padding: 0px;
-    width: 90%;
+    width: 80%;
     text-align: center;
     vertical-align: middle;
 }
 
 .selector {
     width: 10%;
-    height: 100%;
+    height: 200%;
     text-align: center;
     vertical-align: middle;
     float: left;
@@ -24,7 +24,7 @@
 }
 
 .elim input[type="submit"]{
-    background: red;
+    background: rgb(175, 10, 10);
     color: #fff;
     border: none;
     outline: none;
@@ -34,7 +34,7 @@
 
 .elim input[type="submit"]:hover{
     cursor: pointer;
-    background: #a71f1f;
+    background: #ff0101;
 }
 
 .nuev{
@@ -43,7 +43,7 @@
     vertical-align: middle; 
 }
 .nuev input[type="submit"]{
-    background: #ff9e20;
+    background: #ff9100d5;
     border: none;
     outline: none;
     height: 40px;
@@ -52,7 +52,7 @@
 
 .nuev input[type="submit"]:hover{
     cursor: pointer;
-    background: #f7b16a;
+    background: #ff8000;
 }
 
 .guar{
@@ -68,4 +68,22 @@
     outline: none;
     height: 40px;
     font-size: 18px;
+}
+
+.guar input[type="submit"]:hover{
+    color: #fff;
+    background: #1ac703;
+}
+
+.botones {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    float: right;
+    display: block;
+    margin-top: 20px;
+    margin-left: -70px;
 }
