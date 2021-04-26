@@ -89,8 +89,6 @@
 
         </form>
 
-
-
     <p><a href="gesreg.php">Volver</a></p>
     <script src="../../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
@@ -100,6 +98,8 @@
 <?php
 
 if(isset($_POST['guardar'])){
+
+    
 
 }
 
