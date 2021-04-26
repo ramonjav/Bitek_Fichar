@@ -19,7 +19,7 @@ if(!empty($_POST["correo"]) && !empty($_POST["contrasena"])){
         $_SESSION['apellidos']=$row["apellidos"];
 
 		if($_SESSION['tipo']==1){
-			header("Location: ../pages/inicio.php");
+			header("Location: ../pages/fichar.php");
 		} else{
 			header("Location: ../pages/gestor.php");
 		}
