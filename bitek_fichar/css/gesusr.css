@@ -15,3 +15,44 @@
     margin-bottom: 200px;
     margin-left: 10px;
 }
+
+.elim{
+    width: 30%;
+    float: left;
+    /* vertical-align: middle; */
+}
+
+.elim input[type="submit"]{
+    background: red;
+    color: #fff;
+}
+
+.elim input[type="submit"]:hover{
+    cursor: pointer;
+    background: #a71f1f;
+}
+
+.nuev{
+    width: 30%;
+    float: right;
+    /* vertical-align: middle; */
+}
+.nuev input[type="submit"]{
+    background: #ff9e20;
+}
+
+.nuev input[type="submit"]:hover{
+    cursor: pointer;
+    background: #f7b16a;
+}
+
+.guar{
+    width: 30%;
+    float: left;
+    /* vertical-align: middle; */
+}
+
+.guar input[type="submit"]{
+    background: #237a17;
+    color: #fff;
+} 
