@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="../css/mbcsmbmcp.css" type="text/css" />
+        <link rel="stylesheet" href="../css/nav.css"/>
         <title>Bitek</title>
     </head>
     <body>
@@ -35,7 +36,7 @@
                     if($_SESSION['tipo'] == 2){
                         $nombre = $_SESSION['nombre'];
                         $apellidos = $_SESSION['apellidos'];
-                        echo "Bienvenido, ", $nombre, " ", $apellidos;
+                        echo "<div class='titulo'><p> Bienvenido, <br>", $nombre, " ", $apellidos, "</p></div>";
                     }else{
                         header("Location: inicio.php");
                     }
