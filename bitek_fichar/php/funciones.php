@@ -94,4 +94,35 @@ function UpdateRegistro($id_reg, $fecha, $hora, $accion, $acepe, $estado){
     }
 }
 
+function WriteState($acep){
+    switch ($acep) {
+        case 0:
+            return "Pendiente";
+            break;
+        case 1:
+            return "Aceptado";
+            break;
+        case 2:
+            return "Rechazado";
+            break;
+    }
+}
+
+function UpdateNotificacion($actualiza, $id_reg, $acep){
+    include("conexion.php");
+    if($actualiza == "empresa"){
+        $camp_act = "aceptado_empresa";
+    }else{
+        $camp_act = "aceptado_trabajador";
+    }
+
+    $sql = "UPDATE `registro` SET `$camp_act`='$acep' WHERE `id_reg` = '$id_reg'";
+
+    if (mysqli_query($conexion, $sql)) {
+        echo "New record created successfully";
+    }else{
+        echo "Error: " . $sql . "<br>" . $conexion->error;
+    }
+}
+
 ?> 

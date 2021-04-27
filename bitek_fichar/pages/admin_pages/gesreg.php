@@ -24,6 +24,7 @@
     </div>
     <?php 
         include("../../php/conexion.php");
+        include("../../php/funciones.php");
         session_start();
 
         if(!isset($_SESSION['tipo'])){
@@ -94,8 +95,8 @@
                 $fecha  = $row['fecha'];
                 $hora = $row['hora'];
                 $accion = $row['accion'];
-                $aceptado_trabajador = $row['aceptado_trabajador'];
-                $aceptado_empresa = $row['aceptado_empresa'];
+                $aceptado_trabajador = WriteState($row['aceptado_trabajador']);
+                $aceptado_empresa = WriteState($row['aceptado_empresa']);
                 $estado = $row['estado'];
                 $nombre_emp =$row["nombre"]." ".$row["apellidos"];;
 

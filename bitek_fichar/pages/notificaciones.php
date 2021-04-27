@@ -23,9 +23,14 @@
             <li><div class="buttonbg"><a href="../php/session_destroy.php">Cerrar Sesión</a></div></li>
         </ul>
     </div>
-    <form>
-        <?php 
+
+    
+    <form method='POST'>
+    <input type="checkbox" onClick="toggle(this)"> 
+
+        <?php
             include("../php/conexion.php");
+            include_once("../php/funciones.php");
             session_start();
 
             $user_id = $_SESSION['id'];
@@ -53,47 +58,59 @@
                     </tr>";
 
                 while($row = mysqli_fetch_array($result)){
-                    $id_reg = $row['id_reg'];
-                    $fecha = $row['fecha'];
-                    $hora = $row['hora'];
-                    $accion = $row['accion'];
-                    $aceptado_tra = $row['aceptado_trabajador'];
-                    $aceptado_emp = $row['aceptado_empresa'];
-                    $estado = $row['estado'];
-        
-                    echo "<tr><td>$id_reg</td>
-                    <td>$fecha</td>
-                    <td>$hora</td>
-                    <td>$accion</td>
-                    <td>$aceptado_tra</td>
-                    <td>$aceptado_emp</td>
-                    <td>$estado</td>
-                    <td><input type='checkbox' value='$id_reg'></td></tr>";
+
+                    echo "<tr>";
+                    echo "<td>". $row['id_reg'] ."</td>";
+                    echo "<td>". $row['fecha'] ."</td>";
+                    echo "<td>". $row['hora'] ."</td>";
+                    echo "<td>". $row['accion'] ."</td>";
+                    echo "<td>". $row['aceptado_trabajador'] ."</td>";
+                    echo "<td>". $row['aceptado_empresa'] ."</td>";
+                    echo "<td>". $row['estado'] ."</td>";
+                    echo "<td><input type='checkbox' name='check[]' value='".$row['id_reg']."'></td>";
+                    echo "</tr>";
                 }    
                 echo "</table>";
-
             }else{
                 echo "No tienes notificaciones :C";
             }
-
         ?>
         <input type="submit" name="aceptar" value="Aceptar">
         <input type="submit" name="rechazar" value="Rechazar">
         </form>
-
+            
+        <script>
+            function toggle(source) {
+                checkboxes = document.getElementsByName('check[]');
+                for(var i=0, n=checkboxes.length;i<n;i++) {
+                    checkboxes[i].checked = source.checked;
+                }
+            }
+        </script>
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/mbjsmbmcp.js"></script>
     </body>
 </html>
-
-
+<!-- g -->
 <?php
-    if(isset($_GET['aceptar'])){
-      
+    if(isset($_POST['aceptar'])){
+        if (isset($_POST['check'])){
+            $selected = $_POST['check'];
+            foreach ($selected as $checks=>$value) {
+                UpdateNotificacion("empresa", $value, "1");
+            }  
+        }
+        header("Location: notificaciones.php");
     }
 
-    if(isset($_GET['rechazar'])){
-        
+    if(isset($_POST['rechazar'])){
+        if (isset($_POST['check'])){
+            $selected = $_POST['check'];
+            foreach ($selected as $checks=>$value) {
+                UpdateNotificacion("empresa", $value, "2");
+            } 
+        }
+        header("Location: notificaciones.php");
     }
 ?>
