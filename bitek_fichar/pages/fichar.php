@@ -16,8 +16,8 @@
         <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
             <a class="button_1" href="fichar.php"><li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"></div></li></a>
             <li><div class="buttonbg" style="width: 120px;"><a href="fichar.php">Fichar</a></div></li>
-            <li><div class="buttonbg" style="width: 175px;"><a href="#">Gestión de Notificaciones</a></div></li>
-            <li><div class="buttonbg" style="width: 175px;"><a href="#">Consultar calendario</a></div></li>
+            <li><div class="buttonbg" style="width: 175px;"><a href="notificaciones_user.php">Gestión de Notificaciones</a></div></li>
+            <li><div class="buttonbg" style="width: 175px;"><a href="calendar_user.php">Consultar calendario</a></div></li>
             <li><div class="buttonbg"><a href="../php/session_destroy.php">Cerrar Sesión</a></div></li>
         </ul>
     </div>

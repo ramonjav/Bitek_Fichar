@@ -17,7 +17,7 @@
             <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="../gestor.php"></a></div></li>
             <li><div class="buttonbg" style="width: 120px;"><a href="gesusr.php">Gestión Usuario</a></div></li>
             <li><div class="buttonbg" style="width: 175px;"><a href="../notificaciones.php">Gestión de Notificaciones</a></div></li>
-            <li><div class="buttonbg" style="width: 87px;"><a href="consultas.php">Consultas</a></div></li>
+            <li><div class="buttonbg" style="width: 87px;"><a href="../calendar.php">Calendario</a></div></li>
             <li><div class="buttonbg" style="width: 147px;"><a href="gesreg.php">Gestión de Registros</a></div></li>
             <li><div class="buttonbg"><a href="../../php/session_destroy.php">Cerrar Sesión</a></div></li>
         </ul>

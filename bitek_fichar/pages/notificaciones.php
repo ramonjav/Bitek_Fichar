@@ -18,7 +18,7 @@
             <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="gestor.php"></a></div></li>
             <li><div class="buttonbg" style="width: 120px;"><a href="admin_pages/gesusr.php">Gestión Usuario</a></div></li>
             <li><div class="buttonbg" style="width: 175px;"><a href="notificaciones.php">Gestión de Notificaciones</a></div></li>
-            <li><div class="buttonbg" style="width: 87px;"><a href="admin_pages/consultas.php">Consultas</a></div></li>
+            <li><div class="buttonbg" style="width: 87px;"><a href="calendar.php">Calendario</a></div></li>
             <li><div class="buttonbg" style="width: 147px;"><a href="admin_pages/gesreg.php">Gestión de Registros</a></div></li>
             <li><div class="buttonbg"><a href="../php/session_destroy.php">Cerrar Sesión</a></div></li>
         </ul>
@@ -26,7 +26,7 @@
 
     
     <form method='POST'>
-    <input type="checkbox" onClick="toggle(this)"> 
+    
 
         <?php
             include("../php/conexion.php");
@@ -45,6 +45,7 @@
 
             if($rows > 0){
                 echo "
+                <p><input type='checkbox' onClick='toggle(this)'>Seleccionar todo</p>
                     <table border=1 style='width:100%'>
                     <tr>
                     <th>ID</th>
@@ -71,12 +72,12 @@
                     echo "</tr>";
                 }    
                 echo "</table>";
+                echo "<input type='submit' name='aceptar' value='Aceptar'>
+                    <input type='submit' name='rechazar' value='Rechazar'>";
             }else{
                 echo "No tienes notificaciones :C";
             }
         ?>
-        <input type="submit" name="aceptar" value="Aceptar">
-        <input type="submit" name="rechazar" value="Rechazar">
         </form>
             
         <script>
@@ -97,9 +98,16 @@
     if(isset($_POST['aceptar'])){
         if (isset($_POST['check'])){
             $selected = $_POST['check'];
-            foreach ($selected as $checks=>$value) {
-                UpdateNotificacion("empresa", $value, "1");
-            }  
+            if($user_tipo == 2){
+                foreach ($selected as $checks=>$value) {
+                    UpdateNotificacion("empresa", $value, "1");
+                } 
+            }else{
+                foreach ($selected as $checks=>$value) {
+                    UpdateNotificacion("trabajador", $value, "1");
+                } 
+            }
+             
         }
         header("Location: notificaciones.php");
     }
@@ -107,9 +115,16 @@
     if(isset($_POST['rechazar'])){
         if (isset($_POST['check'])){
             $selected = $_POST['check'];
-            foreach ($selected as $checks=>$value) {
-                UpdateNotificacion("empresa", $value, "2");
-            } 
+            if($user_tipo == 2){
+                foreach ($selected as $checks=>$value) {
+                    UpdateNotificacion("empresa", $value, "2");
+                } 
+            }else{
+                foreach ($selected as $checks=>$value) {
+                    UpdateNotificacion("trabajador", $value, "2");
+                } 
+            }
+            
         }
         header("Location: notificaciones.php");
     }

@@ -49,4 +49,8 @@ if(isset($_POST["aceptar"])){
     }
     header("Location: ../pages/fichar.php");
 }
+
+if(isset($_POST["cancelar"])){
+    header("Location: ../pages/fichar.php");
+}
 ?>
