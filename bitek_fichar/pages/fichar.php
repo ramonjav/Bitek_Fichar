@@ -72,4 +72,22 @@
 </body>
 </html>
 
-    
+<?php
+
+$sql = "SELECT * FROM `registro` WHERE `fecha` = '2021-04-27' ORDER BY `hora`";
+$result = mysqli_query($conexion, $sql);
+$primer_registro = true;
+$break = false;
+
+while($row = mysqli_fetch_array($result)){
+    echo "<tr>";
+    if($primer_registro == true && $row['accion'] == "final"){
+        echo "Falta Información" ;
+        break;
+    }else{
+        echo "<p>".$row['fecha']. " " .$row['hora']."</p>";
+        $primer_registro = false;
+    }
+}
+
+?>
