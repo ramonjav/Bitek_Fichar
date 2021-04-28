@@ -32,7 +32,13 @@
             include("../php/conexion.php");
             include_once("../php/funciones.php");
             session_start();
-
+            if(!isset($_SESSION['tipo'])){
+                header("Location: ../../index.php");
+            }else{
+                if($_SESSION['tipo'] == 1){
+                    header("Location: ../fichar.php");
+                }
+            }
             $user_id = $_SESSION['id'];
             $user_tipo = $_SESSION['tipo'];
             if($user_tipo == 2){

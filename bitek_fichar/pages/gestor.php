@@ -38,7 +38,7 @@
                         $apellidos = $_SESSION['apellidos'];
                         echo "<div class='titulo'><p>Bienvenido, <br>", $nombre, " ", $apellidos,"</p></div>";
                     }else{
-                        header("Location: inicio.php");
+                        header("Location: fichar.php");
                     }
                 }
             ?>

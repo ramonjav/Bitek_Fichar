@@ -16,8 +16,8 @@
         if(!isset($_SESSION['tipo'])){
             header("Location: ../../index.php");
         }else{
-            if(!$_SESSION['tipo'] == 2){
-                header("Location: inicio.php");
+            if($_SESSION['tipo'] == 1){
+                header("Location: ../fichar.php");
             }
         }
 

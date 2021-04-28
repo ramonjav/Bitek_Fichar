@@ -2,6 +2,15 @@
 	session_start();
 	include_once("calendar/db.php");
 	include("../php/funciones.php");
+
+	if(!isset($_SESSION['tipo'])){
+		header("Location: ../../index.php");
+	}else{
+		if($_SESSION['tipo'] == 1){
+			header("Location: ../fichar.php");
+		}
+	}
+
 	if($_SESSION['tipo'] == 2){
 		if(isset($_GET['jid'])){
             $JID = $_GET['jid'];
