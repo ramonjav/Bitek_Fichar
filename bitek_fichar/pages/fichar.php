@@ -73,21 +73,35 @@
 </html>
 
 <?php
-
-$sql = "SELECT * FROM `registro` WHERE `fecha` = '2021-04-27' ORDER BY `hora`";
-$result = mysqli_query($conexion, $sql);
-$primer_registro = true;
-$break = false;
-
-while($row = mysqli_fetch_array($result)){
-    echo "<tr>";
-    if($primer_registro == true && $row['accion'] == "final"){
-        echo "Falta Información" ;
-        break;
+    $sql = "SELECT * FROM `registro` WHERE `fecha` = '2021-04-27' ORDER BY `hora`";
+    $result = mysqli_query($conexion, $sql); 
+    $rows = mysqli_num_rows($result);
+    $primer_registro = true;
+    $correct = false;
+    $count = 0;
+    
+    if($rows%2==0){
+        while($row = mysqli_fetch_array($result)){
+            echo "<tr>";
+            if($primer_registro == true && $row['accion'] == "final"){
+                echo "Falta Información" ;
+                break;
+            }else{
+                // echo "<p>".$row['fecha']. " " .$row['hora']."</p>";
+                $primer_registro = false;
+                $horas[$count] = $row['hora'];
+                $count++;
+                $correct = true;
+            }
+        }
     }else{
-        echo "<p>".$row['fecha']. " " .$row['hora']."</p>";
-        $primer_registro = false;
+        echo "Falta información";
     }
-}
 
+    if($correct == true){
+        $array_num = count($horas);
+        for ($i = 0; $i < $array_num; ++$i){
+            echo $hora[$i];
+        }       
+    }
 ?>
