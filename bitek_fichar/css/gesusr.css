@@ -42,7 +42,7 @@
 .elim{
     width: 33%;
     float: left;
-    vertical-align: middle; 
+    vertical-align: right; 
 }
 
 .elim input[type="submit"]{

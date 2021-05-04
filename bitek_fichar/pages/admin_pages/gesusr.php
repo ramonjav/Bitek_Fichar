@@ -103,7 +103,7 @@
                 <div class="botones">
                     <div class="guar"><input type='submit' name= 'guardar' value='Guardar'></div>
                     <div class="elim"><input type='submit' name= 'eliminar' value='Eliminar'></div>
-                    <div class="nuev"><input type='submit' name= 'nuevo' value='Nuevo Usuario'></div>
+                    <!-- <div class="nuev"><input type='submit' name= 'nuevo' value='Nuevo Usuario'></div> -->
                 </div> 
             </form>
         </div>
