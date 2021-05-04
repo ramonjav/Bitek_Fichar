@@ -4,10 +4,12 @@
 	include("../php/funciones.php");
 	if($_SESSION['tipo'] == 1){
 		$id_emp = $_SESSION['id'];
-		$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $id_emp";
+		$consulta_eventos = "SELECT DISTINCT `fecha` FROM `registro` WHERE `id_usuario` = '$id_emp'";
 	}
 	
 	$resultado_eventos = mysqli_query($conexion, $consulta_eventos);
+	
+	
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,24 +65,50 @@ body {
 						$('#cadastrar').modal('show');						
 					},
 					events: [
+						
 						<?php
 							while($registros_eventos = mysqli_fetch_array($resultado_eventos)){
+								$fecha = $registros_eventos['fecha'];
+								$sql = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$fecha' AND id_usuario = '$id_emp'";
+								$result = mysqli_query($conexion, $sql);
+								$count = 0;
+								$primer_registro = true;
+								$rows = mysqli_num_rows($result);
+								$correct = true;
 
-								if($registros_eventos['accion'] == "inicio"){
-									$color = "#32B123 ";
-								}else{
-									$color = "#D41919";
+								while($registros = mysqli_fetch_array($result)){
+									$count++;
+
+									/*if($count == $rows){
+										$sten = $registros['fecha'];
+										echo "{
+											id: '1',
+											title: 'Horas Totales: ',
+											start: '$sten',
+											end: '$sten',
+											color: '#FF4500',
+											},";
+									}*/
+									if($registros['accion'] == "inicio"){
+										$color = "#32B123 ";
+									}else{
+										$color = "#D41919";
+									}
+									?>
+
+									{
+									id: '<?php echo $registros['id_reg']; ?>',
+									title: '<?php echo $registros['accion']. " " .$registros['nombre']; ?>',
+									start: '<?php echo $registros['fecha'] . " " . $registros['hora']; ?>',
+									end: '<?php echo $registros['fecha'] . " " . $registros['hora']; ?>',
+									color: '<?php echo $color; ?>',
+									},<?php
+								
 								}
-								?>
-								{
-								id: '<?php echo $registros_eventos['id_reg']; ?>',
-								title: '<?php echo $registros_eventos['accion']. " " .$registros_eventos['nombre']; ?>',
-								start: '<?php echo $registros_eventos['fecha'] . " " . $registros_eventos['hora']; ?>',
-								end: '<?php echo $registros_eventos['fecha'] . " " . $registros_eventos['hora']; ?>',
-								color: '<?php echo $color; ?>',
-								},<?php
 							}
+							
 						?>
+						
 					]
 				});
 			});

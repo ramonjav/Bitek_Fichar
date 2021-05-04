@@ -89,7 +89,8 @@
             }else{
                 // echo "<p>".$row['fecha']. " " .$row['hora']."</p>";
                 $primer_registro = false;
-                $horas[$count] = $row['hora'];
+                $hora =  new DateTime($row['hora']);
+                $horas[$count] = $hora;
                 $count++;
                 $correct = true;
             }
@@ -101,7 +102,15 @@
     if($correct == true){
         $array_num = count($horas);
         for ($i = 0; $i < $array_num; ++$i){
-            echo $hora[$i];
+            $no = $i+1;
+            if($no >=2){
+                break;
+            }else{
+                $intervalo = $horas[$i]->diff($horas[$i+1]);
+                
+            }
+            
+            echo $intervalo->format('%H Horas %i Minutos y %s Segundos');
         }       
     }
 ?>
