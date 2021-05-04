@@ -14,14 +14,14 @@
 	if($_SESSION['tipo'] == 2){
 		if(isset($_GET['jid'])){
             $JID = $_GET['jid'];
-			$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $JID";
+			$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $JID AND usuarios.usuario_activo = 'activo'";
 		}else{
-			$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario";
+			$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE usuarios.usuario_activo = 'activo'";
 		}
 		
 	}else{
 		$id_emp = $_SESSION['id'];
-		$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $id_emp";
+		$consulta_eventos = "SELECT * FROM registro INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $id_emp AND usuarios.usuario_activo = 'activo'";
 	}
 	
 	$resultado_eventos = mysqli_query($conexion, $consulta_eventos);

@@ -6,7 +6,7 @@ if(!empty($_POST["correo"]) && !empty($_POST["contrasena"])){
     $email=strip_tags(mysqli_real_escape_string($conexion,$_POST['correo']));
 	$pass=strip_tags(mysqli_real_escape_string($conexion,$_POST['contrasena']));
     
-	$sql=mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo='$email' and contrasena='$pass'");
+	$sql=mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo='$email' and contrasena='$pass' and usuarios.usuario_activo = 'activo'");
 
 	if($row=mysqli_fetch_array($sql)){
 

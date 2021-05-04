@@ -38,18 +38,18 @@
         if(!empty($_GET['date']) && isset($_GET['opciones'])){
             $date = $_GET['date'];
             $JID = $_GET['opciones'];
-            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$date' AND id_usuario = $JID ORDER BY `id_reg` DESC";
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$date' AND id_usuario=$JID AND usuarios.usuario_activo = 'activo' ORDER BY `id_reg` DESC";
             echo "completo";
         }elseif(!empty($_GET['date'])){
             $date = $_GET['date'];
-            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$date' ORDER BY `id_reg` DESC";
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE fecha = '$date' AND usuarios.usuario_activo = 'activo' ORDER BY `id_reg` DESC";
 
         }elseif(isset($_GET['opciones'])){
             $JID = $_GET['opciones'];
-            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $JID ORDER BY `id_reg` DESC";
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE id_usuario = $JID AND usuarios.usuario_activo = 'activo' ORDER BY `id_reg` DESC";
 
         }else{
-            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario ORDER BY `id_reg` DESC";
+            $sql = "SELECT * FROM `registro` INNER JOIN `usuarios` ON usuarios.id_user = registro.id_usuario WHERE usuarios.usuario_activo = 'activo' ORDER BY `id_reg` DESC";
         }
 
         $sql_emp = "SELECT * FROM `usuarios`";

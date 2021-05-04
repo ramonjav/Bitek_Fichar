@@ -72,8 +72,8 @@
 </body>
 </html>
 
-<?php
-    $sql = "SELECT * FROM `registro` WHERE `fecha` = '2021-04-27' ORDER BY `hora`";
+<?php 
+   /* $sql = "SELECT * FROM `registro` WHERE `fecha` = '2021-04-27' ORDER BY `hora`";
     $result = mysqli_query($conexion, $sql); 
     $rows = mysqli_num_rows($result);
     $primer_registro = true;
@@ -112,5 +112,5 @@
             
             echo $intervalo->format('%H Horas %i Minutos y %s Segundos');
         }       
-    }
-?>
+    }*/
+?> 

@@ -72,10 +72,10 @@
     
     <div class="container">
         <div class="formu">
-            <form action='gesusr.php' method='post'>
+            <form action='gesusr.php' method='POST'>
                 <!-- DNI/NIE-->
                 <label for='name'>DNI/NIE</label>
-                <input type='name' name='dni' id='dni' value='<?php echo $JDNI; ?>'>
+                <input require type='name' name='dni' id="dni" value='<?php echo $JDNI; ?>'>
 
                 <!-- Nombre -->
                 <label for='name'>Nombre</label>
@@ -99,8 +99,7 @@
                     <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
                     <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
                 </select>
-            </form>
-            <form action='gesusr.php' method='post'>
+            
                 <div class="botones">
                     <div class="guar"><input type='submit' name= 'guardar' value='Guardar'></div>
                     <div class="elim"><input type='submit' name= 'eliminar' value='Eliminar'></div>
@@ -121,8 +120,6 @@
 
         select.addEventListener('change', opcionCambiada);
     </script>
-
-    
 
     <script src="../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -164,12 +161,10 @@ if(isset($_POST['guardar'])){
 
 
 if(isset($_POST['eliminar'])){
-    if(!empty($_POST['dni'])){
-        $dni = $_POST['dni'];
-        if(comprobarUsuario($dni)){
-            DeleteUsuario($dni);
-            header("Location: gesusr.php");
-        }else{echo "Este usuario no existe";}
-    }else{echo "No puedes dejar el DNI/NIE en blanco";}
+    $dni = $_POST['dni'];
+    if(comprobarUsuario($dni)){
+        DeleteUsuario($dni);
+        header("Location: gesusr.php");
+    }else{echo "Este usuario no existe";}
 }
 ?>

@@ -36,7 +36,7 @@ function UpdateUsuario($dni, $nombre, $apellidos, $correo, $contrasena, $tipo){
 
 function DeleteUsuario($dni){
     include("conexion.php");
-    $sql = "DELETE FROM `usuarios` WHERE `dni` = '$dni'";
+    $sql = "UPDATE `usuarios` SET `usario_activo`= 'inactivo'  WHERE `dni` = '$dni'";
 
     if (mysqli_query($conexion, $sql)) {
         echo "New record deleted successfully";
