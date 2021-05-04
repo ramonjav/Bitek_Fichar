@@ -30,17 +30,18 @@
 .botones {
     top: 50%;
     left: 50%;
-    position: absolute;
+    position:fixed;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     float: right;
     display: block;
-    margin-top: 25px;
+    margin-top: 5px;
     margin-left: -70px;
+    width: 15%;
 }
 
 .elim{
-    width: 33%;
+    width: 48%;
     float: left;
     vertical-align: middle; 
 }
@@ -59,26 +60,8 @@
     background: #ff0101;
 }
 
-.nuev{
-    width: 33%;
-    float: right;
-    vertical-align: middle; 
-}
-.nuev input[type="submit"]{
-    background: #ff9100d5;
-    border: none;
-    outline: none;
-    height: 40px;
-    font-size: 18px;
-}
-
-.nuev input[type="submit"]:hover{
-    cursor: pointer;
-    background: #ff8000;
-}
-
 .guar{
-    width: 33%;
+    width: 48%;
     float: left;
     vertical-align: middle;
 }
