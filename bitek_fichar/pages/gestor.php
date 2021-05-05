@@ -46,7 +46,7 @@
                 <h2>
                     <a style="text-decoration:none;" href="#">
                     <span style="color:gray;">Hora actual en</span>
-                    <br/>Madrid, España</a>
+                    <br/>Donostia - San Sebastián, País Vasco</a>
                 </h2>
                 <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=Europe%2FMadrid" width="100%" height="140" frameborder="0" seamless></iframe>
             </div>
