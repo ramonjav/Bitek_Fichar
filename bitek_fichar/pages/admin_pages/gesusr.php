@@ -75,7 +75,7 @@
             <form action='gesusr.php' method='POST'>
                 <!-- DNI/NIE-->
                 <label for='name'>DNI/NIE</label>
-                <input require type='name' name='dni' id="dni" value='<?php echo $JDNI; ?>'>
+                <input  type='name' name='dni' id="dni" value='<?php echo $JDNI; ?>' required>
 
                 <!-- Nombre -->
                 <label for='name'>Nombre</label>
@@ -103,7 +103,6 @@
                 <div class="botones">
                     <div class="guar"><input type='submit' name= 'guardar' value='Guardar'></div>
                     <div class="elim"><input type='submit' name= 'eliminar' value='Eliminar'></div>
-                    
                 </div> 
             </form>
         </div>
