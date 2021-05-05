@@ -42,6 +42,14 @@
                     }
                 }
             ?>
+            <div style="text-align:center;padding:1em 0;">
+                <h2>
+                    <a style="text-decoration:none;" href="#">
+                    <span style="color:gray;">Hora actual en</span>
+                    <br/>Madrid, España</a>
+                </h2>
+                <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=es&size=large&timezone=Europe%2FMadrid" width="100%" height="140" frameborder="0" seamless></iframe>
+            </div>
         </div>
         <!-- <iframe src="notificaciones.php" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe> -->
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
