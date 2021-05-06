@@ -97,7 +97,7 @@
                 <label for='name'>Tipo</label>
                 <select id='tipo' name='tipo'>
                     <option value='1' <?php if($JTIPO == 1){ echo "selected";}?>>Empleado</option> 
-                    <option value='2' <?php if($JTIPO == 2){ echo "selected";}?> >Administrador</option>
+                    <option value='2' <?php if($JTIPO == 2){ echo "selected";}?>>Administrador</option>
                 </select>
             
                 <div class="botones">

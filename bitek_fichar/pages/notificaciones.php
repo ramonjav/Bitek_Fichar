@@ -13,6 +13,21 @@
         <title>Bitek</title>
     </head>
     <body>
+    <?php
+        include("../php/conexion.php");
+        include_once("../php/funciones.php");
+        session_start();
+        if(!isset($_SESSION['tipo'])){
+            header("Location: ../../index.php");
+        }else{
+            if($_SESSION['tipo'] == 1){
+                header("Location: ../fichar.php");
+            }
+        }
+        $user_id = $_SESSION['id'];
+        $user_tipo = $_SESSION['tipo'];
+
+    ?>
     <div id="mbmcpebul_wrapper" style="max-width: 913px;" class="container">
         <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
             <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="gestor.php"></a></div></li>
@@ -25,33 +40,20 @@
     </div>
 
     
-    <form method='POST'>
-    
+    <form accion='notificaciones.php' method='POST'>
+    <input type='checkbox' onClick='toggle(this)'>Seleccionar todo
 
         <?php
-            include("../php/conexion.php");
-            include_once("../php/funciones.php");
-            session_start();
-            if(!isset($_SESSION['tipo'])){
-                header("Location: ../../index.php");
-            }else{
-                if($_SESSION['tipo'] == 1){
-                    header("Location: ../fichar.php");
-                }
-            }
-            $user_id = $_SESSION['id'];
-            $user_tipo = $_SESSION['tipo'];
-            if($user_tipo == 2){
-                $sql = "SELECT * FROM `registro` WHERE `aceptado_empresa` = '0'";
-            }else{
-                $sql = "SELECT * FROM `registro` WHERE `id_usuario` = '$user_id' AND `aceptado_trabajador` = '0'";
-            }
+            
+            
+            $sql = "SELECT * FROM `registro` WHERE `aceptado_empresa` = '0'";
+           
             $result = mysqli_query($conexion, $sql);
             $rows = mysqli_num_rows($result);
 
             if($rows > 0){
                 echo "
-                <p><input type='checkbox' onClick='toggle(this)'>Seleccionar todo</p>
+                <p></p>
                     <table border=1 style='width:100%'>
                     <tr>
                     <th>ID</th>
@@ -86,6 +88,10 @@
         ?>
         </form>
             
+
+        <script src="../js/jquery-3.6.0.slim.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/mbjsmbmcp.js"></script>
         <script>
             function toggle(source) {
                 checkboxes = document.getElementsByName('check[]');
@@ -94,9 +100,6 @@
                 }
             }
         </script>
-        <script src="../js/jquery-3.6.0.slim.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../js/mbjsmbmcp.js"></script>
     </body>
 </html>
 <!-- g -->
@@ -119,19 +122,19 @@
     }
 
     if(isset($_POST['rechazar'])){
-        if (isset($_POST['check'])){
-            $selected = $_POST['check'];
-            if($user_tipo == 2){
-                foreach ($selected as $checks=>$value) {
-                    UpdateNotificacion("empresa", $value, "2");
-                } 
-            }else{
-                foreach ($selected as $checks=>$value) {
-                    UpdateNotificacion("trabajador", $value, "2");
-                } 
-            }
+        // if (isset($_POST['check'])){
+        //     $selected = $_POST['check'];
+        //     if($user_tipo == 2){
+        //         foreach ($selected as $checks=>$value) {
+        //             UpdateNotificacion("empresa", $value, "2");
+        //         } 
+        //     }else{
+        //         foreach ($selected as $checks=>$value) {
+        //             UpdateNotificacion("trabajador", $value, "2");
+        //         } 
+        //     }
             
-        }
+        // }
         header("Location: notificaciones.php");
     }
 ?>
