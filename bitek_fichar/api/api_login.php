@@ -15,6 +15,7 @@ include("../php/conexion.php");
             $response["message"] = "Bienvenido";
 
             $response["id_user"] = $row["id_user"];
+            $response["dni"] = $row["dni"];
             $response["mail"] = $row["correo"];
             $response["pass"] = $row["contrasena"];
             $response["type"] = $row["tipo"];
