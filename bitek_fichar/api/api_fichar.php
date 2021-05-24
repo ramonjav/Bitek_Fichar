@@ -6,12 +6,12 @@ include("../php/funciones.php");
 #1 = success
 #2 = confirm
 
-$user_id = $_GET['id'];
-$fecha = $_GET['date'];
-$hora = $_GET['hour'];
-$confirm = $_GET['confirm'];
+$user_id = $_POST['id'];
+$fecha = $_POST['date'];
+$hora = $_POST['hour'];
+$confirm = $_POST['confirm'];
 
-    if ($_GET["accion"] == 'inicio') {
+    if ($_POST["accion"] == 'inicio') {
 
         $ultimoRegistro =  getLastReg($user_id);
 
@@ -35,7 +35,7 @@ $confirm = $_GET['confirm'];
         }
     }
 
-    if ($_GET["accion"] == 'final') {
+    if ($_POST["accion"] == 'final') {
         $ultimoRegistro =  getLastReg($user_id);
 
         if($ultimoRegistro['accion'] == "final" && $confirm == '0'){
@@ -59,7 +59,7 @@ $confirm = $_GET['confirm'];
     }
 
     /*if(isset($_POST["aceptar"])){
-        if(isset($_GET["iniciar"])){
+        if(isset($_POST["iniciar"])){
             InsertRegistro($fecha, $hora, "inicio", 1, 0, "trabajando", $user_id);
 
         }else{

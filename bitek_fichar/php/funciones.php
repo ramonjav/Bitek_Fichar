@@ -76,7 +76,7 @@ function InsertRegistro($fecha, $hora, $accion, $acept, $acepe, $estado, $user_i
     $sql="INSERT INTO registro (fecha, hora, accion, aceptado_trabajador, aceptado_empresa, estado, id_usuario) VALUES ('$fecha', '$hora', '$accion', '$acept', '$acepe', '$estado', '$user_id')";
 
     if (mysqli_query($conexion, $sql)) {
-        echo "New record created successfully";
+        // echo "New record created successfully";
     }else{
         echo "Error: " . $sql . "<br>" . $conexion->error;
     }
