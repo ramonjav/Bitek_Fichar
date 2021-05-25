@@ -2,6 +2,7 @@
 body {
   margin: 0px;
   padding: 0px;
+  display: block;
 }
 #mbmcpebul_wrapper {
   padding: 5px;
@@ -18,19 +19,22 @@ body {
 #mbmcpebul_wrapper.quirks {
   margin-bottom: 7px;
   margin-right: 7px;
+  display: block;
 }
 #mbmcpebul_wrapper.quirks #mbmcpebul_table ul li {
   width: 100%;
+  display: block;
 }
 #mbmcpebul_table {
   margin: 0px;
-  margin-bottom: -7px;
-  margin-right: -7px;
+  margin-bottom: -10px;
+  margin-right: -10px;
   padding: 0;
   line-height: 0px;
   font-size: 0px;
   display: inline-block;
   width: auto;
+  height: auto;
 }
 #mbmcpebul_table li a {
   line-height: 15px;
@@ -471,7 +475,7 @@ body {
   width: 4px; 
   height: 5px; 
   display: inline-block; 
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 #mbmcpebul_table li:hover > a span.img_4x5, #mbmcpebul_table li.subexpanded > a span.img_4x5 { 
   background-position: 0 -5px; 
@@ -561,4 +565,4 @@ body {
   background-repeat: no-repeat; 
   margin-right: 6px; 
   border: 0; 
-} 
+}
