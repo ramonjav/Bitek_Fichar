@@ -1,8 +1,8 @@
 /* Created with Easy CSS Menu */
 body {
-  margin: 0px;
-  padding: 0px;
-  display: block;
+  margin: 0px 0px;
+  padding: 0;
+  display: table;
 }
 #mbmcpebul_wrapper {
   padding: 5px;
@@ -35,6 +35,7 @@ body {
   display: inline-block;
   width: auto;
   height: auto;
+
 }
 #mbmcpebul_table li a {
   line-height: 15px;
@@ -120,6 +121,7 @@ body {
   background: transparent;
   font-size: 0;
   border-radius: 5px;
+  
 }
 #mbmcpebul_table ul li a {
   padding: 8px 16px 8px 14px;

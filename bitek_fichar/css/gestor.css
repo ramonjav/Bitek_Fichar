@@ -17,9 +17,6 @@ body {
     text-align: center;
 }
 
-.center{
-    text-align: center;
-    display: table;
-    justify-content: center;
-    width: 100%;
+#prueba{
+ clear: both;
 }
