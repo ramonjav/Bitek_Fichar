@@ -16,3 +16,9 @@ body {
     color: #FF8A0E;
     text-align: center;
 }
+
+.center{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
