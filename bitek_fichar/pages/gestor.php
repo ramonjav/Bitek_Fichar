@@ -14,7 +14,7 @@
         <title>Bitek</title>
     </head>
     <body>
-        <div id="cuerpo" class="container-fluid">
+            <div id="cuerpo" class="container-fluid">
             <?php 
                 include("../php/conexion.php");
                 session_start();
