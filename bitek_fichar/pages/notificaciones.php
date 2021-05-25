@@ -39,11 +39,12 @@
         </ul>
     </div>
 
-    
-    <form accion='notificaciones.php' method='POST'>
-    <input type='checkbox' onClick='toggle(this)'>Seleccionar todo
-
         <?php
+
+        echo "
+        <form accion='notificaciones.php' method='POST'>
+        <input type='checkbox' onClick='toggle(this)'>
+        Seleccionar todo";
             
             
             $sql = "SELECT * FROM `registro` WHERE `aceptado_empresa` = '0'";
@@ -65,30 +66,32 @@
                     <th>Estado</th>
                     <th>Select</th>
                     </tr>";
-
-                while($row = mysqli_fetch_array($result)){
-
-                    echo "<tr>";
-                    echo "<td>". $row['id_reg'] ."</td>";
-                    echo "<td>". $row['fecha'] ."</td>";
-                    echo "<td>". $row['hora'] ."</td>";
-                    echo "<td>". $row['accion'] ."</td>";
-                    echo "<td>". $row['aceptado_trabajador'] ."</td>";
-                    echo "<td>". $row['aceptado_empresa'] ."</td>";
-                    echo "<td>". $row['estado'] ."</td>";
-                    echo "<td><input type='checkbox' name='check[]' value='".$row['id_reg']."'></td>";
-                    echo "</tr>";
-                }    
+                    $num = 0;
+                    while($row = mysqli_fetch_array($result)){
+                        $num++;
+                        echo "<tr>";
+                        echo "<td>". $row['id_reg'] ."</td>";
+                        echo "<td>". $row['fecha'] ."</td>";
+                        echo "<td>". $row['hora'] ."</td>";
+                        echo "<td>". $row['accion'] ."</td>";
+                        echo "<td>". $row['aceptado_trabajador'] ."</td>";
+                        echo "<td>". $row['aceptado_empresa'] ."</td>";
+                        echo "<td>". $row['estado'] ."</td>";
+                        echo "<td><input type='checkbox' name='check[]' value='".$row['id_reg']."'></td>";
+                        echo "</tr>";
+                    }    
                 echo "</table>";
                 echo "<input type='submit' name='aceptar' value='Aceptar'>
                     <input type='submit' name='rechazar' value='Rechazar'>";
             }else{
                 echo "No tienes notificaciones :C";
             }
-        ?>
-        </form>
-            
 
+            $conexion->close();
+
+            echo " </form>";
+        ?>
+       
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/mbjsmbmcp.js"></script>
@@ -100,6 +103,8 @@
                 }
             }
         </script>
+
+        
     </body>
 </html>
 <!-- g -->
@@ -111,30 +116,21 @@
                 foreach ($selected as $checks=>$value) {
                     UpdateNotificacion("empresa", $value, "1");
                 } 
-            }else{
-                foreach ($selected as $checks=>$value) {
-                    UpdateNotificacion("trabajador", $value, "1");
-                } 
             }
-             
         }
         header("Location: notificaciones.php");
     }
 
     if(isset($_POST['rechazar'])){
-        // if (isset($_POST['check'])){
-        //     $selected = $_POST['check'];
-        //     if($user_tipo == 2){
-        //         foreach ($selected as $checks=>$value) {
-        //             UpdateNotificacion("empresa", $value, "2");
-        //         } 
-        //     }else{
-        //         foreach ($selected as $checks=>$value) {
-        //             UpdateNotificacion("trabajador", $value, "2");
-        //         } 
-        //     }
-            
-        // }
+        if (isset($_POST['check'])){
+            $selected = $_POST['check'];
+            if($user_tipo == 2){
+                foreach ($selected as $checks=>$value) {
+                    UpdateNotificacion("empresa", $value, "2");
+                } 
+            }
+     
+        }
         header("Location: notificaciones.php");
     }
 ?>

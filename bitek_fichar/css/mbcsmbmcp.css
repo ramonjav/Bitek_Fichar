@@ -2,7 +2,7 @@
 body {
   margin: 0px 0px;
   padding: 0;
-  display: table;
+  display: block;
 }
 #mbmcpebul_wrapper {
   padding: 5px;
@@ -15,6 +15,7 @@ body {
   border-collapse: separate;
   font-size: 0;
   line-height: 0;
+  margin-left: 17.5%;
 }
 #mbmcpebul_wrapper.quirks {
   margin-bottom: 7px;
