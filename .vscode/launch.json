@@ -5,7 +5,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost/Bitek_fichar/bitek_fichar/",
+            "url": "http://localhost/bitek_fichar/Bitek_Fichar-1/bitek_fichar/",
             "webRoot": "${workspaceFolder}"
         }
     ]
