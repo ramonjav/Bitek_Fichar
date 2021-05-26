@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../css/mbcsmbmcp.css" type="text/css" />
     <link rel="stylesheet" href="../css/gestor.css"/>
+    <link rel="stylesheet" href="../css/fichar.css"/>
     <title>Bitek</title>
 </head>
 <body>
@@ -33,8 +34,8 @@
 
         echo "<form action='../php/fichaje.php' method='post'>";
         if(!isset($_GET['especial'])){
-            echo "<input type='submit' name='inicio' value='Inicio'></p>
-            <input type='submit' name='final' value='Final'></p>";
+            echo "<input class='btnin' type='submit' name='inicio' value='Inicio'></p>
+            <input class='btnin' type='submit' name='final' value='Final'></p>";
         }else{
             echo "Estas de ", $_GET['especial'];
         }
