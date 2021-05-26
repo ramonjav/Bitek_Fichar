@@ -118,11 +118,11 @@ function UpdateNotificacion($actualiza, $id_reg, $acep){
 
     $sql = "UPDATE `registro` SET `$camp_act`='$acep' WHERE `id_reg` = '$id_reg'";
 
-    /*if (mysqli_query($conexion, $sql)) {
-        echo "New record created successfully";
+    if (mysqli_query($conexion, $sql)) {
+        //echo "New record created successfully";
     }else{
         echo "Error: " . $sql . "<br>" . $conexion->error;
-    }*/
+    }
 }
 
 ?> 

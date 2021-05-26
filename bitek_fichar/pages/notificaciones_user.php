@@ -34,11 +34,9 @@
 
             $user_id = $_SESSION['id'];
             $user_tipo = $_SESSION['tipo'];
-            if($user_tipo == 2){
-                $sql = "SELECT * FROM `registro` WHERE `aceptado_empresa` = '0'";
-            }else{
-                $sql = "SELECT * FROM `registro` WHERE `id_usuario` = '$user_id' AND `aceptado_trabajador` = '0'";
-            }
+            
+            $sql = "SELECT * FROM `registro` WHERE `id_usuario` = '$user_id' AND `aceptado_trabajador` = '0'";
+            
             $result = mysqli_query($conexion, $sql);
             $rows = mysqli_num_rows($result);
 
