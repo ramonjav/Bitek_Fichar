@@ -13,7 +13,7 @@
         <title>Bitek</title>
     </head>
     <body>
-    <div id="mbmcpebul_wrapper" style="max-width: 913px;" class="container">
+    <div id="mbmcpebul_wrapper" class="container">
         <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
             <a class="button_1" href="fichar.php"><li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"></div></li></a>
             <li><div class="buttonbg" style="width: 120px;"><a href="fichar.php">Fichar</a></div></li>
@@ -43,8 +43,8 @@
             $rows = mysqli_num_rows($result);
 
             if($rows > 0){
+                /*<p><input type='checkbox' onClick='toggle(this)'>Seleccionar todo</p>*/
                 echo "
-                <p><input type='checkbox' onClick='toggle(this)'>Seleccionar todo</p>
                     <table border=1 style='width:100%'>
                     <tr>
                     <th>ID</th>
@@ -79,14 +79,14 @@
         ?>
         </form>
             
-        <script>
+        <!-- <script> 
             function toggle(source) {
                 checkboxes = document.getElementsByName('check[]');
                 for(var i=0, n=checkboxes.length;i<n;i++) {
                     checkboxes[i].checked = source.checked;
                 }
             }
-        </script>
+        </script>-->
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/mbjsmbmcp.js"></script>

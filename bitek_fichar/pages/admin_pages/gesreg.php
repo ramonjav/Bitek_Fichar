@@ -12,7 +12,7 @@
     <title>Bitek</title>
 </head>
 <body>
-    <div id="mbmcpebul_wrapper" style="max-width: 913px;" class="container">
+    <div id="mbmcpebul_wrapper" class="container">
         <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
             <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="../gestor.php"></a></div></li>
             <li><div class="buttonbg" style="width: 120px;"><a href="gesusr.php">Gestión Usuario</a></div></li>

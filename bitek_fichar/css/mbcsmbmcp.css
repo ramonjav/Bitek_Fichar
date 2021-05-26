@@ -3,8 +3,11 @@ body {
   margin: 0px 0px;
   padding: 0;
   display: block;
+  
 }
 #mbmcpebul_wrapper {
+  display: block;
+  text-align: center;
   padding: 5px;
   border-style: solid;
   border-color: transparent;
@@ -15,7 +18,7 @@ body {
   border-collapse: separate;
   font-size: 0;
   line-height: 0;
-  margin-left: 17.5%;
+ 
 }
 #mbmcpebul_wrapper.quirks {
   margin-bottom: 7px;

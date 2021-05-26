@@ -28,7 +28,7 @@
         $user_tipo = $_SESSION['tipo'];
 
     ?>
-    <div id="mbmcpebul_wrapper" style="max-width: 913px;" class="container">
+    <div id="mbmcpebul_wrapper" class="container">
         <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
             <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="gestor.php"></a></div></li>
             <li><div class="buttonbg" style="width: 120px;"><a href="admin_pages/gesusr.php">Gestión Usuario</a></div></li>
@@ -42,9 +42,9 @@
         <?php
 
         echo "
-        <form accion='notificaciones.php' method='POST'>
-        <input type='checkbox' onClick='toggle(this)'>
-        Seleccionar todo";
+        <form accion='notificaciones.php' method='POST'>";
+        /*<input type='checkbox' onClick='toggle(this)'>
+        Seleccionar todo*/
             
             
             $sql = "SELECT * FROM `registro` WHERE `aceptado_empresa` = '0'";
@@ -95,14 +95,14 @@
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         <script type="text/javascript" src="../js/mbjsmbmcp.js"></script>
-        <script>
+       <!-- <script> 
             function toggle(source) {
                 checkboxes = document.getElementsByName('check[]');
                 for(var i=0, n=checkboxes.length;i<n;i++) {
                     checkboxes[i].checked = source.checked;
                 }
             }
-        </script>
+        </script>-->
 
         
     </body>
