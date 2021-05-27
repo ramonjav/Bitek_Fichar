@@ -25,7 +25,8 @@
 
     
     <form method='POST'>
-    
+        <input type='submit' name='aceptar' value='Aceptar'>
+        <input type='submit' name='rechazar' value='Rechazar'>
 
         <?php
             include("../php/conexion.php");
@@ -69,8 +70,7 @@
                     echo "</tr>";
                 }    
                 echo "</table>";
-                echo "<input type='submit' name='aceptar' value='Aceptar'>
-                    <input type='submit' name='rechazar' value='Rechazar'>";
+                
             /*}else{
                 echo "No tienes notificaciones :C";
             }*/

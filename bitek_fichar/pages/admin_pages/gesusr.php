@@ -160,10 +160,11 @@ if(isset($_POST['guardar'])){
 
 
 if(isset($_POST['eliminar'])){
+    echo "hey";
     $dni = $_POST['dni'];
     if(comprobarUsuario($dni)){
         DeleteUsuario($dni);
-        header("Location: gesusr.php");
+       header("Location: gesusr.php");
     }else{echo "Este usuario no existe";}
 }
 ?>

@@ -26,14 +26,14 @@ include("../php/conexion.php");
         }else{
             $response["success"] = 0;
             $response["message"] = "El usuario que seleccionó no esta activo. Contacta con tu administrador para activar este usuario";
-            //echo json_encode($response);
+            echo json_encode($response);
     
         }
  
 	}else{
         $response["success"] = 0;
         $response["message"] = "Credenciales incorrectas";
-        //echo json_encode($response);
+        echo json_encode($response);
 
 	}
 /*}else{

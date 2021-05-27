@@ -14,7 +14,7 @@ function getLastReg($user_id){
 
 function InsertUsuario($dni, $nombre, $apellidos, $correo, $contrasena, $tipo){
     include("conexion.php");
-    $sql="INSERT INTO usuarios (nombre, apellidos, dni, correo, tipo, contrasena) VALUES ('$nombre', '$apellidos', '$dni', '$correo', '$tipo', '$contrasena')";
+    $sql="INSERT INTO usuarios (nombre, apellidos, dni, correo, tipo, contrasena, usuario_activo) VALUES ('$nombre', '$apellidos', '$dni', '$correo', '$tipo', '$contrasena', 'activo')";
 
     if (mysqli_query($conexion, $sql)) {
         echo "New record created successfully";
@@ -36,11 +36,11 @@ function UpdateUsuario($dni, $nombre, $apellidos, $correo, $contrasena, $tipo){
 
 function DeleteUsuario($dni){
     include("conexion.php");
-    $sql = "UPDATE `usuarios` SET `usario_activo`= 'inactivo'  WHERE `dni` = '$dni'";
+    $sql = "UPDATE `usuarios` SET `usuario_activo`= 'inactivo'  WHERE `dni` = '$dni'";
 
     if (mysqli_query($conexion, $sql)) {
         echo "New record deleted successfully";
-    }else{
+    }else{ 
         echo "Error: " . $sql . "<br>" . $conexion->error;
     }
 }
