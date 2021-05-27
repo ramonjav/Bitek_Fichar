@@ -7,8 +7,12 @@ $accion = $_POST['ac'];
 
 if($accion == '1'){
     UpdateNotificacion("trabajador", $id_regs, "1");
-    echo "aceptado";
+    $response["success"] = 1;
+    $response["message"] = "Bienvenido";
 }else{
     UpdateNotificacion("trabajador", $id_regs, "2");
-    echo "rechazado";
+    $response["success"] = 1;
+    $response["message"] = "Bienvenido";
 }
+
+echo json_encode($response);
