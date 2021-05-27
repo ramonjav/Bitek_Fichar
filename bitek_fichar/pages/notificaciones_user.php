@@ -40,7 +40,7 @@
             $result = mysqli_query($conexion, $sql);
             $rows = mysqli_num_rows($result);
 
-            if($rows > 0){
+           // if($rows > 0){
                 /*<p><input type='checkbox' onClick='toggle(this)'>Seleccionar todo</p>*/
                 echo "
                     <table border=1 style='width:100%'>
@@ -71,9 +71,9 @@
                 echo "</table>";
                 echo "<input type='submit' name='aceptar' value='Aceptar'>
                     <input type='submit' name='rechazar' value='Rechazar'>";
-            }else{
+            /*}else{
                 echo "No tienes notificaciones :C";
-            }
+            }*/
         ?>
         </form>
             
@@ -106,7 +106,7 @@
             }
              
         }
-        header("Location: notificaciones.php");
+        header("Location: notificaciones_user.php");
     }
 
     if(isset($_POST['rechazar'])){
@@ -123,6 +123,6 @@
             }
             
         }
-        header("Location: notificaciones.php");
+        header("Location: notificaciones_user.php");
     }
 ?>

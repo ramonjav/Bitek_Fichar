@@ -13,7 +13,18 @@
         <title>Bitek</title>
     </head>
     <body>
-    <?php
+    <div id="mbmcpebul_wrapper" class="container">
+        <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
+            <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="gestor.php"></a></div></li>
+            <li><div class="buttonbg" style="width: 120px;"><a href="admin_pages/gesusr.php">Gestión Usuario</a></div></li>
+            <li><div class="buttonbg" style="width: 175px;"><a href="notificaciones.php">Gestión de Notificaciones</a></div></li>
+            <li><div class="buttonbg" style="width: 87px;"><a href="calendar.php">Calendario</a></div></li>
+            <li><div class="buttonbg" style="width: 147px;"><a href="admin_pages/gesreg.php">Gestión de Registros</a></div></li>
+            <li><div class="buttonbg"><a href="../php/session_destroy.php">Cerrar Sesión</a></div></li>
+        </ul>
+    </div>
+
+        <?php
         include("../php/conexion.php");
         include_once("../php/funciones.php");
         session_start();
@@ -27,32 +38,19 @@
         $user_id = $_SESSION['id'];
         $user_tipo = $_SESSION['tipo'];
 
-    ?>
-    <div id="mbmcpebul_wrapper" class="container">
-        <ul id="mbmcpebul_table" class="mbmcpebul_menulist css_menu">
-            <li><div class="icon_1 with_img_200 buttonbg" style="width: 230px;"><a class="button_1" href="gestor.php"></a></div></li>
-            <li><div class="buttonbg" style="width: 120px;"><a href="admin_pages/gesusr.php">Gestión Usuario</a></div></li>
-            <li><div class="buttonbg" style="width: 175px;"><a href="notificaciones.php">Gestión de Notificaciones</a></div></li>
-            <li><div class="buttonbg" style="width: 87px;"><a href="calendar.php">Calendario</a></div></li>
-            <li><div class="buttonbg" style="width: 147px;"><a href="admin_pages/gesreg.php">Gestión de Registros</a></div></li>
-            <li><div class="buttonbg"><a href="../php/session_destroy.php">Cerrar Sesión</a></div></li>
-        </ul>
-    </div>
-
-        <?php
-
         echo "
         <form accion='notificaciones.php' method='POST'>";
         /*<input type='checkbox' onClick='toggle(this)'>
         Seleccionar todo*/
-            
+        echo "<input type='submit' name='aceptar' value='Aceptar'>
+        <input type='submit' name='rechazar' value='Rechazar'>";
             
             $sql = "SELECT * FROM `registro` WHERE `aceptado_empresa` = '0'";
            
             $result = mysqli_query($conexion, $sql);
             $rows = mysqli_num_rows($result);
 
-            if($rows > 0){
+           // if($rows > 0){
                 echo "
                 <p></p>
                     <table border=1 style='width:100%'>
@@ -81,15 +79,39 @@
                         echo "</tr>";
                     }    
                 echo "</table>";
-                echo "<input type='submit' name='aceptar' value='Aceptar'>
-                    <input type='submit' name='rechazar' value='Rechazar'>";
-            }else{
+               
+            /*}else{
                 echo "No tienes notificaciones :C";
-            }
+            }*/
 
             $conexion->close();
 
             echo " </form>";
+
+            if(isset($_POST['aceptar'])){
+                if (isset($_POST['check'])){
+                    $selected = $_POST['check'];
+                    if($user_tipo == 2){
+                        foreach ($selected as $checks=>$value) {
+                            UpdateNotificacion("empresa", $value, "1");
+                        } 
+                        
+                        header("Location: notificaciones.php");
+                    }
+                }
+            }
+        
+            if(isset($_POST['rechazar'])){
+                if (isset($_POST['check'])){
+                    $selected = $_POST['check'];
+                    if($user_tipo == 2){
+                        foreach ($selected as $checks=>$value) {
+                            UpdateNotificacion("empresa", $value, "2");
+                        } 
+                        header("Location: notificaciones.php");
+                    }
+                }
+            }
         ?>
        
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
@@ -108,30 +130,3 @@
     </body>
 </html>
 <!-- g -->
-<?php
-    if(isset($_POST['aceptar'])){
-        if (isset($_POST['check'])){
-            $selected = $_POST['check'];
-            if($user_tipo == 2){
-                foreach ($selected as $checks=>$value) {
-                    UpdateNotificacion("empresa", $value, "1");
-                } 
-            }
-        }
-        header("Location: notificaciones.php");
-    }
-
-    if(isset($_POST['rechazar'])){
-        if (isset($_POST['check'])){
-            $selected = $_POST['check'];
-            if($user_tipo == 2){
-                foreach ($selected as $checks=>$value) {
-                    UpdateNotificacion("empresa", $value, "2");
-                } 
-            }
-     
-        }
-        header("Location: notificaciones.php");
-    }
-?>
-

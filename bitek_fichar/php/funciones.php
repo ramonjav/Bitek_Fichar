@@ -82,6 +82,17 @@ function InsertRegistro($fecha, $hora, $accion, $acept, $acepe, $estado, $user_i
     }
 }
 
+function DeleteRegistro($id_reg){
+    include("conexion.php");
+    $sql="DELETE FROM `registro` WHERE `id_reg` = '$id_reg'";
+
+    if (mysqli_query($conexion, $sql)) {
+        // echo "New record created successfully";
+    }else{
+        echo "Error: " . $sql . "<br>" . $conexion->error;
+    }
+}
+
 
 function UpdateRegistro($id_reg, $fecha, $hora, $accion, $acepe, $estado){
     include("conexion.php");

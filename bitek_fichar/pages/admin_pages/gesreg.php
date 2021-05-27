@@ -22,6 +22,8 @@
             <li><div class="buttonbg"><a href="../../php/session_destroy.php">Cerrar Sesión</a></div></li>
         </ul>
     </div>
+
+    <p><a href="crear_reg.php">Crear registro nuevo</a></p>
     <?php 
         include("../../php/conexion.php");
         include("../../php/funciones.php");
@@ -114,7 +116,7 @@
             echo "</table>";
         }
     ?> 
-    <p><a href="crear_reg.php">Crear registro nuevo</a></p>
+    
 
     <script src="../js/jquery-3.6.0.slim.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
