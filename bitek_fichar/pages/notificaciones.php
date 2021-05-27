@@ -24,7 +24,7 @@
         </ul>
     </div>
 
-        <?php
+<?php
         include("../php/conexion.php");
         include_once("../php/funciones.php");
         session_start();
@@ -112,7 +112,7 @@
                     }
                 }
             }
-        ?>
+?>
        
         <script src="../js/jquery-3.6.0.slim.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
